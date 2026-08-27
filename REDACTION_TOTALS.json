@@ -1,0 +1,11 @@
+{
+ "cells_redacted": 22028,
+ "columns_redacted": 12,
+ "words_row_sum": 579896,
+ "words_unique_within_column_sum": 303414,
+ "words_unique_deposit_level": 166249,
+ "source_documents_affected": 963,
+ "max_unique_words_from_one_document": 1795,
+ "documents_over_500_unique_words": 102,
+ "note": "words_unique_deposit_level is THE figure to quote. It pools every redacted column, deduplicates exact repeats, and drops any passage that is a substring of a longer passage from the same source document. words_row_sum counts the same passage once per row it appears in. words_unique_within_column_sum deduplicates inside each column but is NOT additive across columns, because actor_claims_long.source_statement contains supporting_passage for the same claim; summing the per-column figures therefore double-counts that overlap."
+}

@@ -1,0 +1,13 @@
+table,column,action,n_rows,unique_texts,words_row_sum,unique_words_within_column,max_words,locators_retained,locators_absent,rows_left_as_paraphrase
+tables/actor_claims_long.csv,supporting_passage,redacted,10038,5186,233511,119001,24,passage_char_start; passage_location,none,
+tables/actor_claims_long.csv,source_statement,redacted,10038,5197,281003,141698,32,passage_char_start; passage_location,none,
+tables/causal_claims.csv,sentence,redacted,635,627,22945,22806,104,sent_id; char_start,none,
+tables/concepts_definitions.csv,definition_text_or_close_paraphrase,redacted (rows flagged verbatim only),8,8,148,148,22,source_location; source_doi_or_id,none,245.0
+tables/funding_power_claims.csv,supporting_passage,redacted,288,287,5048,5030,24,char_start; passage_id,none,
+tables/middle_power_attributions.csv,supporting_passage,redacted,119,94,1617,1256,22,supporting_passage_location,none,
+tables/power_mechanisms.csv,source_sentence,redacted,892,372,35488,13339,84,sent_id,none,
+tables/middle_power_attributions.csv,exact_terminology_used,redacted (residual duplicate sweep),1,1,8,8,8,row identifiers,none,
+tables/middle_power_attributions.csv,material_positional_criterion,redacted (residual duplicate sweep),2,2,28,28,20,row identifiers,none,
+tables/middle_power_attributions.csv,behavioural_criterion,redacted (residual duplicate sweep),4,4,50,50,18,row identifiers,none,
+tables/middle_power_attributions.csv,identity_self_identification_criterion,redacted (residual duplicate sweep),2,2,23,23,12,row identifiers,none,
+tables/middle_power_attributions.csv,evidence_provided,redacted (residual duplicate sweep),1,1,27,27,27,row identifiers,none,

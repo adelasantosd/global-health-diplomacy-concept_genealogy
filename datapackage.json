@@ -1,0 +1,3631 @@
+{
+ "profile": "tabular-data-package",
+ "name": "ghd-relational-database",
+ "title": "A relational database of actors, claims, concepts and diplomatic actions in the global health diplomacy literature (1945-2026)",
+ "description": "13 linked tables, 42,063 rows, 404 documented variables, derived from a systematic review of the global health diplomacy literature. Verbatim source passages are withheld in this public release and represented by position, word count and a SHA-256 digest; see REDACTION_LOG.csv and README.md.",
+ "licenses": [
+  {
+   "name": "CC-BY-4.0",
+   "path": "https://creativecommons.org/licenses/by/4.0/",
+   "title": "Creative Commons Attribution 4.0 International"
+  }
+ ],
+ "created": "2026-08-27T12:18:16Z",
+ "x-corpus": {
+  "corpus_A_scholarly": 2474,
+  "corpus_B_institutional": 859,
+  "corpus_C_think_tank": 62,
+  "note": "The three corpora were identified by separate searches and are never pooled."
+ },
+ "x-redaction": {
+  "columns_redacted": 6,
+  "verbatim_words_withheld": 166249,
+  "log": "REDACTION_LOG.csv"
+ },
+ "resources": [
+  {
+   "name": "REDACTION_EXPOSURE_BY_DOCUMENT",
+   "path": "REDACTION_EXPOSURE_BY_DOCUMENT.csv",
+   "profile": "tabular-data-resource",
+   "format": "csv",
+   "encoding": "utf-8",
+   "mediatype": "text/csv",
+   "bytes": 15595,
+   "hash": "sha256:7beef3a3e3b2a2d0f18f01aa1e4b596d561c9fca0bb5e21a65c5879cdbaf8750",
+   "rows": 963,
+   "schema": {
+    "fields": [
+     {
+      "name": "document_id",
+      "type": "string",
+      "n_nonmissing": 963
+     },
+     {
+      "name": "maximal_passages",
+      "type": "integer",
+      "n_nonmissing": 963
+     },
+     {
+      "name": "unique_words",
+      "type": "integer",
+      "n_nonmissing": 963
+     }
+    ]
+   }
+  },
+  {
+   "name": "REDACTION_LOG",
+   "path": "REDACTION_LOG.csv",
+   "profile": "tabular-data-resource",
+   "format": "csv",
+   "encoding": "utf-8",
+   "mediatype": "text/csv",
+   "bytes": 1650,
+   "hash": "sha256:6412e244a5a56ff80b54c9907ed8b44b8b3e437d99e89dda5a3c2faed3f5e43c",
+   "rows": 12,
+   "schema": {
+    "fields": [
+     {
+      "name": "table",
+      "type": "string",
+      "n_nonmissing": 12
+     },
+     {
+      "name": "column",
+      "type": "string",
+      "n_nonmissing": 12
+     },
+     {
+      "name": "action",
+      "type": "string",
+      "n_nonmissing": 12
+     },
+     {
+      "name": "n_rows",
+      "type": "integer",
+      "n_nonmissing": 12
+     },
+     {
+      "name": "unique_texts",
+      "type": "integer",
+      "n_nonmissing": 12
+     },
+     {
+      "name": "words_row_sum",
+      "type": "integer",
+      "n_nonmissing": 12
+     },
+     {
+      "name": "unique_words_within_column",
+      "type": "integer",
+      "n_nonmissing": 12
+     },
+     {
+      "name": "max_words",
+      "type": "integer",
+      "n_nonmissing": 12
+     },
+     {
+      "name": "locators_retained",
+      "type": "string",
+      "n_nonmissing": 12
+     },
+     {
+      "name": "locators_absent",
+      "type": "string",
+      "n_nonmissing": 12
+     },
+     {
+      "name": "rows_left_as_paraphrase",
+      "type": "number",
+      "n_nonmissing": 1
+     }
+    ]
+   }
+  },
+  {
+   "name": "database_table_manifest",
+   "path": "database_table_manifest.csv",
+   "profile": "tabular-data-resource",
+   "format": "csv",
+   "encoding": "utf-8",
+   "mediatype": "text/csv",
+   "bytes": 4481,
+   "hash": "sha256:1eea9e2d20dd7f9b28c73594700b91ba4814f9b50e5dfb8844629f3a46f430af",
+   "rows": 13,
+   "schema": {
+    "fields": [
+     {
+      "name": "table",
+      "type": "string",
+      "n_nonmissing": 13
+     },
+     {
+      "name": "n_rows",
+      "type": "integer",
+      "n_nonmissing": 13
+     },
+     {
+      "name": "n_columns",
+      "type": "integer",
+      "n_nonmissing": 13
+     },
+     {
+      "name": "grain",
+      "type": "string",
+      "n_nonmissing": 13
+     },
+     {
+      "name": "primary_key",
+      "type": "string",
+      "n_nonmissing": 13
+     },
+     {
+      "name": "foreign_keys",
+      "type": "string",
+      "n_nonmissing": 13
+     },
+     {
+      "name": "corpus_coverage",
+      "type": "string",
+      "n_nonmissing": 13
+     },
+     {
+      "name": "tier_coverage",
+      "type": "string",
+      "n_nonmissing": 13
+     },
+     {
+      "name": "codebook_variable_rows",
+      "type": "integer",
+      "n_nonmissing": 13
+     },
+     {
+      "name": "file_bytes",
+      "type": "integer",
+      "n_nonmissing": 13
+     },
+     {
+      "name": "purpose",
+      "type": "string",
+      "n_nonmissing": 13
+     }
+    ]
+   }
+  },
+  {
+   "name": "reference__actor_membership",
+   "path": "reference/actor_membership.csv",
+   "profile": "tabular-data-resource",
+   "format": "csv",
+   "encoding": "utf-8",
+   "mediatype": "text/csv",
+   "bytes": 7463,
+   "hash": "sha256:0ad4985bdd3e8012be9ea09c14f0c7c7b1a262a509d0c1bcaa787f5b95b9f264",
+   "rows": 50,
+   "schema": {
+    "fields": [
+     {
+      "name": "collective_actor_id",
+      "type": "string",
+      "n_nonmissing": 50
+     },
+     {
+      "name": "collective_name",
+      "type": "string",
+      "n_nonmissing": 50
+     },
+     {
+      "name": "member_actor_id",
+      "type": "string",
+      "n_nonmissing": 50
+     },
+     {
+      "name": "member_name",
+      "type": "string",
+      "n_nonmissing": 50
+     },
+     {
+      "name": "member_iso3",
+      "type": "string",
+      "n_nonmissing": 50
+     },
+     {
+      "name": "relation",
+      "type": "string",
+      "n_nonmissing": 50
+     },
+     {
+      "name": "note",
+      "type": "string",
+      "n_nonmissing": 50
+     }
+    ]
+   }
+  },
+  {
+   "name": "reference__actor_namespace_crosswalk",
+   "path": "reference/actor_namespace_crosswalk.csv",
+   "profile": "tabular-data-resource",
+   "format": "csv",
+   "encoding": "utf-8",
+   "mediatype": "text/csv",
+   "bytes": 8174,
+   "hash": "sha256:ed2874b8b8d4660cd6d45bdb4e48b510ff2f781927f52287c914c01e1bcae0fe",
+   "rows": 130,
+   "schema": {
+    "fields": [
+     {
+      "name": "actor_code",
+      "type": "string",
+      "n_nonmissing": 130
+     },
+     {
+      "name": "actor_label",
+      "type": "string",
+      "n_nonmissing": 130
+     },
+     {
+      "name": "actor_family",
+      "type": "string",
+      "n_nonmissing": 130
+     },
+     {
+      "name": "actor_id",
+      "type": "string",
+      "n_nonmissing": 130
+     },
+     {
+      "name": "actor_id_exists_in_actors_table",
+      "type": "boolean",
+      "n_nonmissing": 130
+     },
+     {
+      "name": "match_method",
+      "type": "string",
+      "n_nonmissing": 130
+     }
+    ]
+   }
+  },
+  {
+   "name": "reference__actor_taxonomy_emergent_categories",
+   "path": "reference/actor_taxonomy_emergent_categories.csv",
+   "profile": "tabular-data-resource",
+   "format": "csv",
+   "encoding": "utf-8",
+   "mediatype": "text/csv",
+   "bytes": 2266,
+   "hash": "sha256:4d190b2434b64fb52bc3eea6753dee59cea7b0b7e24b35316484a1f2a29c5243",
+   "rows": 8,
+   "schema": {
+    "fields": [
+     {
+      "name": "category",
+      "type": "string",
+      "n_nonmissing": 8
+     },
+     {
+      "name": "n_actors",
+      "type": "integer",
+      "n_nonmissing": 8
+     },
+     {
+      "name": "n_documents",
+      "type": "integer",
+      "n_nonmissing": 8
+     },
+     {
+      "name": "why",
+      "type": "string",
+      "n_nonmissing": 8
+     },
+     {
+      "name": "exemplars",
+      "type": "string",
+      "n_nonmissing": 8
+     }
+    ]
+   }
+  },
+  {
+   "name": "reference__entity_resolution_log",
+   "path": "reference/entity_resolution_log.csv",
+   "profile": "tabular-data-resource",
+   "format": "csv",
+   "encoding": "utf-8",
+   "mediatype": "text/csv",
+   "bytes": 5472,
+   "hash": "sha256:d0a35f6ee0b131837f1dfd8ace87fc3f1cee16e7650da40f762a6f9c60d83ba8",
+   "rows": 15,
+   "schema": {
+    "fields": [
+     {
+      "name": "rule_id",
+      "type": "string",
+      "n_nonmissing": 15
+     },
+     {
+      "name": "decision",
+      "type": "string",
+      "n_nonmissing": 15
+     },
+     {
+      "name": "entities_kept_distinct",
+      "type": "string",
+      "n_nonmissing": 15
+     },
+     {
+      "name": "worked_example",
+      "type": "string",
+      "n_nonmissing": 15
+     },
+     {
+      "name": "rationale",
+      "type": "string",
+      "n_nonmissing": 15
+     }
+    ]
+   }
+  },
+  {
+   "name": "reference__middle_power_crosswalk",
+   "path": "reference/middle_power_crosswalk.csv",
+   "profile": "tabular-data-resource",
+   "format": "csv",
+   "encoding": "utf-8",
+   "mediatype": "text/csv",
+   "bytes": 5498,
+   "hash": "sha256:c35d295b770676f2968794bc78777b64b210281f178ae4cf0e2f0d669167e0bf",
+   "rows": 10,
+   "schema": {
+    "fields": [
+     {
+      "name": "middle_power_theoretical_mechanism",
+      "type": "string",
+      "n_nonmissing": 10
+     },
+     {
+      "name": "mechanism_key",
+      "type": "string",
+      "n_nonmissing": 10
+     },
+     {
+      "name": "n_ir_theory_records_invoking_mechanism",
+      "type": "integer",
+      "n_nonmissing": 10
+     },
+     {
+      "name": "ir_theory_pool_denominator",
+      "type": "integer",
+      "n_nonmissing": 10
+     },
+     {
+      "name": "ghd_analogue",
+      "type": "string",
+      "n_nonmissing": 10
+     },
+     {
+      "name": "observable_indicator",
+      "type": "string",
+      "n_nonmissing": 10
+     },
+     {
+      "name": "evidence_in_ghd_literature_n_sources",
+      "type": "integer",
+      "n_nonmissing": 10
+     },
+     {
+      "name": "evidence_in_ghd_literature_n_attribution_rows",
+      "type": "integer",
+      "n_nonmissing": 10
+     },
+     {
+      "name": "n_rows_deep_tier",
+      "type": "integer",
+      "n_nonmissing": 10
+     },
+     {
+      "name": "countries_with_evidence",
+      "type": "string",
+      "n_nonmissing": 10
+     },
+     {
+      "name": "targeted_search_string_hits_europepmc",
+      "type": "integer",
+      "n_nonmissing": 10
+     },
+     {
+      "name": "corpus_fulltext_prevalence_n_of_425",
+      "type": "integer",
+      "n_nonmissing": 10
+     },
+     {
+      "name": "crosswalk_status",
+      "type": "string",
+      "n_nonmissing": 10
+     },
+     {
+      "name": "candidate_empirical_network_indicator",
+      "type": "string",
+      "n_nonmissing": 10
+     },
+     {
+      "name": "ir_ghd_asymmetry_ratio",
+      "type": "number",
+      "n_nonmissing": 10
+     }
+    ]
+   }
+  },
+  {
+   "name": "reference__product14_research_codebook",
+   "path": "reference/product14_research_codebook.csv",
+   "profile": "tabular-data-resource",
+   "format": "csv",
+   "encoding": "utf-8",
+   "mediatype": "text/csv",
+   "bytes": 128042,
+   "hash": "sha256:9978b9dd9e31a6ea5f501a148596c5a303c87d0f302e0faa310fdd0b9755000e",
+   "rows": 404,
+   "schema": {
+    "fields": [
+     {
+      "name": "table",
+      "type": "string",
+      "n_nonmissing": 404
+     },
+     {
+      "name": "variable",
+      "type": "string",
+      "n_nonmissing": 404
+     },
+     {
+      "name": "value_type",
+      "type": "string",
+      "n_nonmissing": 404
+     },
+     {
+      "name": "n_nonmissing",
+      "type": "integer",
+      "n_nonmissing": 404
+     },
+     {
+      "name": "pct_nonmissing",
+      "type": "number",
+      "n_nonmissing": 404
+     },
+     {
+      "name": "n_distinct",
+      "type": "integer",
+      "n_nonmissing": 404
+     },
+     {
+      "name": "allowed_values_or_range",
+      "type": "string",
+      "n_nonmissing": 399
+     },
+     {
+      "name": "denominator_n_rows",
+      "type": "integer",
+      "n_nonmissing": 404
+     }
+    ]
+   }
+  },
+  {
+   "name": "reference__referential_integrity_report",
+   "path": "reference/referential_integrity_report.csv",
+   "profile": "tabular-data-resource",
+   "format": "csv",
+   "encoding": "utf-8",
+   "mediatype": "text/csv",
+   "bytes": 2750,
+   "hash": "sha256:ee66e068a2fc248f3a59438ca35210875b90bf2cd2d6589719b4524deec49a26",
+   "rows": 16,
+   "schema": {
+    "fields": [
+     {
+      "name": "child_table",
+      "type": "string",
+      "n_nonmissing": 16
+     },
+     {
+      "name": "foreign_key",
+      "type": "string",
+      "n_nonmissing": 16
+     },
+     {
+      "name": "parent_table",
+      "type": "string",
+      "n_nonmissing": 16
+     },
+     {
+      "name": "parent_key",
+      "type": "string",
+      "n_nonmissing": 16
+     },
+     {
+      "name": "n_child_rows_with_key",
+      "type": "integer",
+      "n_nonmissing": 16
+     },
+     {
+      "name": "n_distinct_keys",
+      "type": "integer",
+      "n_nonmissing": 16
+     },
+     {
+      "name": "n_orphan_keys",
+      "type": "integer",
+      "n_nonmissing": 16
+     },
+     {
+      "name": "orphan_keys",
+      "type": "string",
+      "n_nonmissing": 3
+     },
+     {
+      "name": "status",
+      "type": "string",
+      "n_nonmissing": 16
+     },
+     {
+      "name": "note",
+      "type": "string",
+      "n_nonmissing": 6
+     }
+    ]
+   }
+  },
+  {
+   "name": "reference__screening_decisions",
+   "path": "reference/screening_decisions.csv",
+   "profile": "tabular-data-resource",
+   "format": "csv",
+   "encoding": "utf-8",
+   "mediatype": "text/csv",
+   "bytes": 1614445,
+   "hash": "sha256:1a566209563d7aee73cdc9ec5d084d405ec01d76c30eb1f68e687db1ee733c2a",
+   "rows": 5366,
+   "schema": {
+    "fields": [
+     {
+      "name": "document_id",
+      "type": "string",
+      "n_nonmissing": 5366
+     },
+     {
+      "name": "ckey",
+      "type": "string",
+      "n_nonmissing": 5366
+     },
+     {
+      "name": "doi",
+      "type": "string",
+      "n_nonmissing": 4463
+     },
+     {
+      "name": "pmid",
+      "type": "number",
+      "n_nonmissing": 1199
+     },
+     {
+      "name": "title",
+      "type": "string",
+      "n_nonmissing": 5366
+     },
+     {
+      "name": "venue",
+      "type": "string",
+      "n_nonmissing": 4578
+     },
+     {
+      "name": "pub_year",
+      "type": "number",
+      "n_nonmissing": 5350
+     },
+     {
+      "name": "database_retrieved",
+      "type": "string",
+      "n_nonmissing": 5366
+     },
+     {
+      "name": "screener",
+      "type": "string",
+      "n_nonmissing": 5366
+     },
+     {
+      "name": "decision",
+      "type": "string",
+      "n_nonmissing": 5366
+     },
+     {
+      "name": "corpus_class",
+      "type": "string",
+      "n_nonmissing": 2483
+     },
+     {
+      "name": "screening_rationale",
+      "type": "string",
+      "n_nonmissing": 5366
+     },
+     {
+      "name": "hand_checked",
+      "type": "string",
+      "n_nonmissing": 5366
+     },
+     {
+      "name": "hand_decision",
+      "type": "string",
+      "n_nonmissing": 120
+     },
+     {
+      "name": "hand_rationale",
+      "type": "string",
+      "n_nonmissing": 120
+     }
+    ]
+   }
+  },
+  {
+   "name": "reference__search_log",
+   "path": "reference/search_log.csv",
+   "profile": "tabular-data-resource",
+   "format": "csv",
+   "encoding": "utf-8",
+   "mediatype": "text/csv",
+   "bytes": 21745,
+   "hash": "sha256:fd47af8af35792baead9add315d002c1a26b3a86aa296fc06571fe7d340fcdd9",
+   "rows": 50,
+   "schema": {
+    "fields": [
+     {
+      "name": "search_id",
+      "type": "string",
+      "n_nonmissing": 50
+     },
+     {
+      "name": "search_string",
+      "type": "string",
+      "n_nonmissing": 50
+     },
+     {
+      "name": "and_terms",
+      "type": "string",
+      "n_nonmissing": 50
+     },
+     {
+      "name": "origin",
+      "type": "string",
+      "n_nonmissing": 50
+     },
+     {
+      "name": "date_run",
+      "type": "string",
+      "n_nonmissing": 50
+     },
+     {
+      "name": "openalex_hits",
+      "type": "integer",
+      "n_nonmissing": 50
+     },
+     {
+      "name": "openalex_records_retrieved",
+      "type": "integer",
+      "n_nonmissing": 50
+     },
+     {
+      "name": "europepmc_hits",
+      "type": "integer",
+      "n_nonmissing": 50
+     },
+     {
+      "name": "europepmc_records_retrieved",
+      "type": "integer",
+      "n_nonmissing": 50
+     },
+     {
+      "name": "arxiv_hits",
+      "type": "integer",
+      "n_nonmissing": 50
+     },
+     {
+      "name": "arxiv_records_retrieved",
+      "type": "integer",
+      "n_nonmissing": 50
+     },
+     {
+      "name": "crossref_reported_total_UNRELIABLE",
+      "type": "integer",
+      "n_nonmissing": 50
+     },
+     {
+      "name": "crossref_records_retrieved",
+      "type": "integer",
+      "n_nonmissing": 50
+     },
+     {
+      "name": "crossref_records_phrase_verified",
+      "type": "integer",
+      "n_nonmissing": 50
+     },
+     {
+      "name": "openalex_query",
+      "type": "string",
+      "n_nonmissing": 50
+     },
+     {
+      "name": "europepmc_query",
+      "type": "string",
+      "n_nonmissing": 50
+     },
+     {
+      "name": "arxiv_query",
+      "type": "string",
+      "n_nonmissing": 50
+     },
+     {
+      "name": "crossref_query",
+      "type": "string",
+      "n_nonmissing": 50
+     }
+    ]
+   }
+  },
+  {
+   "name": "reference__stage3_reliability_audit",
+   "path": "reference/stage3_reliability_audit.csv",
+   "profile": "tabular-data-resource",
+   "format": "csv",
+   "encoding": "utf-8",
+   "mediatype": "text/csv",
+   "bytes": 1260,
+   "hash": "sha256:f889b671df05031280784e2897c2fa1bafe37d3731e3f3874f0026017455db1f",
+   "rows": 6,
+   "schema": {
+    "fields": [
+     {
+      "name": "audit",
+      "type": "string",
+      "n_nonmissing": 6
+     },
+     {
+      "name": "n",
+      "type": "integer",
+      "n_nonmissing": 6
+     },
+     {
+      "name": "metric",
+      "type": "string",
+      "n_nonmissing": 6
+     },
+     {
+      "name": "value",
+      "type": "number",
+      "n_nonmissing": 6
+     },
+     {
+      "name": "unit",
+      "type": "string",
+      "n_nonmissing": 6
+     }
+    ]
+   }
+  },
+  {
+   "name": "tables__actor_claims_long",
+   "path": "tables/actor_claims_long.csv",
+   "profile": "tabular-data-resource",
+   "format": "csv",
+   "encoding": "utf-8",
+   "mediatype": "text/csv",
+   "bytes": 9249802,
+   "hash": "sha256:130ca9242088722de99dcd2abd808fe2d1647c5a3eb3ca1ecb6e766bb83ad543",
+   "rows": 14779,
+   "schema": {
+    "fields": [
+     {
+      "name": "claim_id",
+      "type": "string",
+      "n_nonmissing": 14779,
+      "allowed_values_or_range": "CLM-000001; CLM-000002; CLM-000003; CLM-000004; CLM-000005; CLM-000006; CLM-000007; CLM-000008; CLM-000009; CLM-000010; CLM-000011; CLM-000012; CLM-000013; CLM-000014; CLM-000015; CLM-000016; CLM-000017; CLM-000018; CLM-000019; CLM-000020; CLM-000021; CLM-000022; CLM-000023; CLM-000024; CLM-000025"
+     },
+     {
+      "name": "document_id",
+      "type": "string",
+      "n_nonmissing": 14779,
+      "allowed_values_or_range": "GHD-00004; GHD-00012; GHD-00029; GHD-00030; GHD-00035; GHD-00036; GHD-00040; GHD-00048; GHD-00061; GHD-00062; GHD-00064; GHD-00066; GHD-00069; GHD-00079; GHD-00083; GHD-00086; GHD-00090; GHD-00091; GHD-00095; GHD-00097; GHD-00100; GHD-00101; GHD-00102; GHD-00114; GHD-00115"
+     },
+     {
+      "name": "title",
+      "type": "string",
+      "n_nonmissing": 14779,
+      "allowed_values_or_range": "\"Digital global health diplomacy\" for climate change and hum; 'Mega-foundations' will help global aid programmes; (A256) Public Health: A Portal to Peace; 10.H. Round table: Access, equity and the relevance of the P; 2.C. Round table: A Pandemic Treaty to deliver global health; 4. China and the Worl \u2026"
+     },
+     {
+      "name": "pub_year",
+      "type": "number",
+      "n_nonmissing": 14779,
+      "allowed_values_or_range": "numeric range [1960.0, 2026.0]"
+     },
+     {
+      "name": "corpus_class",
+      "type": "string",
+      "n_nonmissing": 14779,
+      "allowed_values_or_range": "adjacent_governance; core_ghd"
+     },
+     {
+      "name": "doc_type",
+      "type": "string",
+      "n_nonmissing": 14779,
+      "allowed_values_or_range": "abstract; book; book_chapter; book_review; brief_report; comment; comparative study; conference_abstract; conference_paper; dataset; discussion; editorial; historical article; journal article; journal_article; letter; other; paratext; peer_review_report; preprint; reference_entry; report; research s \u2026"
+     },
+     {
+      "name": "actor_id",
+      "type": "string",
+      "n_nonmissing": 14779,
+      "allowed_values_or_range": "CLUB-ACTA; CLUB-AFRICA-GROUP; CLUB-ALBA; CLUB-BRICS; CLUB-COVAX; CLUB-EQUITY-GROUP; CLUB-FPGH; CLUB-G20; CLUB-G7; CLUB-G77; CLUB-GHSA; CLUB-GHSI; CLUB-GPMB; CLUB-IBSA; CLUB-IPPPR; CLUB-LANCET-COMM; CLUB-MIKTA; CLUB-NAM; CLUB-QUAD; CLUB-UHC2030; GRP-AFRICAN-STATES; GRP-DONORS; GRP-EMERGING; GRP-FRAGI \u2026"
+     },
+     {
+      "name": "canonical_name",
+      "type": "string",
+      "n_nonmissing": 14779,
+      "allowed_values_or_range": "ALBA; ANVISA; APEC; ASEAN; Access to COVID-19 Tools Accelerator (ACT-A); Afghanistan; Africa CDC; Africa Group (Geneva/WHO negotiating bloc); African Development Bank; African Medicines Agency; African Union; African Vaccine Acquisition Trust; African states (collective); Aga Khan Development Networ \u2026"
+     },
+     {
+      "name": "exact_name_in_source",
+      "type": "string",
+      "n_nonmissing": 14779,
+      "allowed_values_or_range": "ACT-A; ACT-Accelerator; AFRO; ANVISA; APEC; ASEAN; AVAT; Access \nto COVID-19 Tools Accelerator; Access to COVID-19 Tools Accelerator; Afghanistan; Africa CDC; Africa Centres for Disease Control; Africa Group; African Development Bank; African Group; African Medicines Agency; African Union; African V \u2026"
+     },
+     {
+      "name": "actor_type",
+      "type": "string",
+      "n_nonmissing": 14779,
+      "allowed_values_or_range": "civil_society; global_health_initiative; informal_coalition; international_financial_institution; international_organization; knowledge_actor; philanthropy; private_sector; regional_organization; state; state_grouping; state_institution"
+     },
+     {
+      "name": "actor_subtype",
+      "type": "string",
+      "n_nonmissing": 14779,
+      "allowed_values_or_range": "academic_centre; academic_journal; advocacy_ngo; aid_role_collective; biotechnology_company; business_forum; cso_generic; developing_country_bloc; development_agency; diaspora_network; diplomatic_mission; disease_partnership; disease_specific_programme; donor_state; donor_state|small_state; emerging \u2026"
+     },
+     {
+      "name": "country_iso3",
+      "type": "string",
+      "n_nonmissing": 7192,
+      "allowed_values_or_range": "AFG; AGO; ALB; ARE; ARG; ARM; ATG; AUS; AUT; AZE; BDI; BEL; BEN; BFA; BGD; BHR; BHS; BIH; BLR; BLZ; BOL; BRA; BRB; BTN; BWA"
+     },
+     {
+      "name": "region",
+      "type": "string",
+      "n_nonmissing": 12565,
+      "allowed_values_or_range": "africa; americas; asia; eastern_mediterranean; europe; global; oceania; western_pacific"
+     },
+     {
+      "name": "evidence_source",
+      "type": "string",
+      "n_nonmissing": 14779,
+      "allowed_values_or_range": "abstract_only; fulltext_deep"
+     },
+     {
+      "name": "coding_tier",
+      "type": "string",
+      "n_nonmissing": 14779,
+      "allowed_values_or_range": "abstract_only; fulltext_deep"
+     },
+     {
+      "name": "coding_method",
+      "type": "string",
+      "n_nonmissing": 14779,
+      "allowed_values_or_range": "llm:claude-sonnet-5; rule_based_v1"
+     },
+     {
+      "name": "claim_seq",
+      "type": "integer",
+      "n_nonmissing": 14779,
+      "allowed_values_or_range": "1; 2; 3; 4; 5; 6"
+     },
+     {
+      "name": "substantive_or_incidental",
+      "type": "string",
+      "n_nonmissing": 14779,
+      "allowed_values_or_range": "incidental; substantive"
+     },
+     {
+      "name": "location_of_mention",
+      "type": "string",
+      "n_nonmissing": 14779,
+      "allowed_values_or_range": "abstract; abstract|body; abstract|body|conclusion|discussion|introduction|methods|res; abstract|body|conclusion|introduction|keywords|title; abstract|body|conclusion|introduction|title; abstract|body|discussion|introduction|methods|results|title; abstract|body|introduction|title; abstract|conclusion \u2026"
+     },
+     {
+      "name": "frequency_of_mentions_in_document",
+      "type": "integer",
+      "n_nonmissing": 14779,
+      "allowed_values_or_range": "numeric range [1, 216]"
+     },
+     {
+      "name": "role_attributed",
+      "type": "string",
+      "n_nonmissing": 10025,
+      "allowed_values_or_range": "advocate/campaigner; agenda setter; bloc leader; broker/bridge-builder; capacity builder; coalition member; convener/host; donor/funder; implementer/operational provider; knowledge producer/evidence provider; manufacturer/supplier; monitor/watchdog; negotiator/party; norm entrepreneur; procurer/purc \u2026"
+     },
+     {
+      "name": "action_attributed",
+      "type": "string",
+      "n_nonmissing": 9672,
+      "allowed_values_or_range": "advocacy/public campaigning; agenda setting in a forum; blocking or opposing a proposal; coalition formation/bloc coordination; financial contribution/pledge; hosting a summit or conference; in-kind donation (vaccines/commodities/equipment); monitoring/evaluation/accountability action; norm promotio \u2026"
+     },
+     {
+      "name": "issue_area",
+      "type": "string",
+      "n_nonmissing": 14779,
+      "allowed_values_or_range": "AMR; COVID-19/pandemic response; Ebola/viral haemorrhagic fever; HIV/AIDS; access to medicines/IP; cholera; climate and health; global health governance (general); health financing; health security (general); health workforce/migration; humanitarian/conflict health; immunization/vaccines (general);  \u2026"
+     },
+     {
+      "name": "arena",
+      "type": "string",
+      "n_nonmissing": 14779,
+      "allowed_values_or_range": "BRICS; COVAX/ACT-A; ECOSOC/HLPF; G20; G7; GHI board (Gavi/Global Fund/CEPI); IHR review; UN General Assembly; UN Security Council; WHO Executive Board; WHO regional committee; WHO/WHA; WTO/TRIPS Council; World Bank/IMF boards; bilateral channel; domestic policy arena; expert commission/panel; media/ \u2026"
+     },
+     {
+      "name": "partner_actor",
+      "type": "string",
+      "n_nonmissing": 1,
+      "allowed_values_or_range": "Member States"
+     },
+     {
+      "name": "target_actor",
+      "type": "number",
+      "n_nonmissing": 0
+     },
+     {
+      "name": "beneficiary",
+      "type": "string",
+      "n_nonmissing": 1,
+      "allowed_values_or_range": "Member States"
+     },
+     {
+      "name": "source_of_power",
+      "type": "string",
+      "n_nonmissing": 14779,
+      "allowed_values_or_range": "agenda-setting position; convening capacity; expertise/epistemic authority; financial leverage (funding dependence); institutional position/formal authority; legitimacy/representativeness; market/manufacturing capacity; material/economic resources; military capability; network position/brokerage; no \u2026"
+     },
+     {
+      "name": "diplomatic_instrument",
+      "type": "string",
+      "n_nonmissing": 14779,
+      "allowed_values_or_range": "capacity building/training; coalition building; medical teams/personnel; multilateral funding; none/not specified; public/media diplomacy; rhetorical framing/discourse; sanctions/coercion; scientific cooperation; standard setting/guidelines; summit/conference diplomacy; technical cooperation; treaty \u2026"
+     },
+     {
+      "name": "objective",
+      "type": "string",
+      "n_nonmissing": 14779,
+      "allowed_values_or_range": "advance national economic interest; advance national geopolitical influence/prestige; alliance building/solidarity; domestic political audience; equity/access to medicines; health security/outbreak containment; humanitarian relief; improve population health; institutional reform; not stated; other;  \u2026"
+     },
+     {
+      "name": "outcome",
+      "type": "string",
+      "n_nonmissing": 14779,
+      "allowed_values_or_range": "contested/disputed outcome; no outcome stated; stated failure; stated partial success; stated success"
+     },
+     {
+      "name": "evaluative_characterization",
+      "type": "string",
+      "n_nonmissing": 14779,
+      "allowed_values_or_range": "mixed; negative/critical; neutral/descriptive; positive/approving"
+     },
+     {
+      "name": "evidence_strength",
+      "type": "string",
+      "n_nonmissing": 14779,
+      "allowed_values_or_range": "asserted_without_evidence; explicit_brief; explicit_with_detail"
+     },
+     {
+      "name": "source_statement",
+      "type": "string",
+      "n_nonmissing": 10038,
+      "allowed_values_or_range": "&#x0D; &#x0D; Received: 31 January 2022 / Accepted: 18 April; ' RL is supported by the Canada Research Chairs program of t; ( 13 ) who set up a project funded by the Dutch Ministry of ; ( 14 ) reported on a capacity-building workshop in Pakistan,; ( 2010 ) as an example of the way Brazil has deploye \u2026"
+     },
+     {
+      "name": "supporting_passage",
+      "type": "string",
+      "n_nonmissing": 10038,
+      "allowed_values_or_range": "&#x0D; &#x0D; Received: 31 January 2022 / Accepted: 18 April; ' RL is supported by the Canada Research Chairs program of t; ( 13 ) who set up a project funded by the Dutch Ministry of ; ( 14 ) reported on a capacity-building workshop in Pakistan,; ( 2010 ) as an example of the way Brazil has deploye \u2026"
+     },
+     {
+      "name": "passage_char_start",
+      "type": "integer",
+      "n_nonmissing": 14779,
+      "allowed_values_or_range": "numeric range [0, 197789]"
+     },
+     {
+      "name": "passage_location",
+      "type": "string",
+      "n_nonmissing": 10038,
+      "allowed_values_or_range": "abstract; abstract @0% of text; abstract @1% of text; abstract @10% of text; abstract @11% of text; abstract @12% of text; abstract @13% of text; abstract @14% of text; abstract @19% of text; abstract @2% of text; abstract @20% of text; abstract @21% of text; abstract @22% of text; abstract @23% of  \u2026"
+     },
+     {
+      "name": "researcher_interpretation",
+      "type": "string",
+      "n_nonmissing": 4,
+      "allowed_values_or_range": "FCTC is treated as an exemplary case demonstrating how HIA c; Mention is an author affiliation credit, not an attributed r; Mention reflects journal publisher attribution, not a substa; UN organ framed as technical/scientific enabler supporting M"
+     },
+     {
+      "name": "verbatim_verified",
+      "type": "integer",
+      "n_nonmissing": 14779,
+      "allowed_values_or_range": "0; 1"
+     },
+     {
+      "name": "influence_claimed",
+      "type": "integer",
+      "n_nonmissing": 14779,
+      "allowed_values_or_range": "0; 1"
+     },
+     {
+      "name": "vocab_notes",
+      "type": "number",
+      "n_nonmissing": 0
+     },
+     {
+      "name": "supporting_passage_wordcount",
+      "type": "number",
+      "n_nonmissing": 10038,
+      "description": "Word count of the withheld passage."
+     },
+     {
+      "name": "supporting_passage_sha256_16",
+      "type": "string",
+      "n_nonmissing": 10038,
+      "description": "First 16 hex characters of the SHA-256 of the withheld passage after whitespace collapse, strip and casefold. Recompute from your own copy of the source to confirm you located the passage we coded."
+     },
+     {
+      "name": "source_statement_wordcount",
+      "type": "number",
+      "n_nonmissing": 10038,
+      "description": "Word count of the withheld passage."
+     },
+     {
+      "name": "source_statement_sha256_16",
+      "type": "string",
+      "n_nonmissing": 10038,
+      "description": "First 16 hex characters of the SHA-256 of the withheld passage after whitespace collapse, strip and casefold. Recompute from your own copy of the source to confirm you located the passage we coded."
+     }
+    ],
+    "primaryKey": "claim_id"
+   },
+   "description": "The central claim table. One row per distinct attribution made about one actor in one document: role, action, issue, arena, partner, power source, objective, outcome, plus the verbatim supporting passage.",
+   "x-foreign-keys-prose": "document_id -> documents.csv; actor_id -> actors.csv"
+  },
+  {
+   "name": "tables__actor_document_mentions",
+   "path": "tables/actor_document_mentions.csv",
+   "profile": "tabular-data-resource",
+   "format": "csv",
+   "encoding": "utf-8",
+   "mediatype": "text/csv",
+   "bytes": 2203599,
+   "hash": "sha256:c81d656d64957fa26c3891f9aac6e3f63c54d99db26f3faa86d4f78cf35b4037",
+   "rows": 9816,
+   "schema": {
+    "fields": [
+     {
+      "name": "document_id",
+      "type": "string",
+      "n_nonmissing": 9816,
+      "allowed_values_or_range": "GHD-00004; GHD-00012; GHD-00029; GHD-00030; GHD-00035; GHD-00036; GHD-00040; GHD-00048; GHD-00061; GHD-00062; GHD-00064; GHD-00066; GHD-00069; GHD-00079; GHD-00083; GHD-00086; GHD-00090; GHD-00091; GHD-00095; GHD-00097; GHD-00100; GHD-00101; GHD-00102; GHD-00114; GHD-00115"
+     },
+     {
+      "name": "actor_id",
+      "type": "string",
+      "n_nonmissing": 9816,
+      "allowed_values_or_range": "CLUB-ACTA; CLUB-AFRICA-GROUP; CLUB-ALBA; CLUB-BRICS; CLUB-COVAX; CLUB-EQUITY-GROUP; CLUB-FPGH; CLUB-G20; CLUB-G7; CLUB-G77; CLUB-GHSA; CLUB-GHSI; CLUB-GPMB; CLUB-IBSA; CLUB-IPPPR; CLUB-LANCET-COMM; CLUB-MIKTA; CLUB-NAM; CLUB-QUAD; CLUB-UHC2030; GRP-AFRICAN-STATES; GRP-DONORS; GRP-EMERGING; GRP-FRAGI \u2026"
+     },
+     {
+      "name": "coding_tier",
+      "type": "string",
+      "n_nonmissing": 9816,
+      "allowed_values_or_range": "abstract_only; fulltext_deep"
+     },
+     {
+      "name": "evidence_source",
+      "type": "string",
+      "n_nonmissing": 9816,
+      "allowed_values_or_range": "abstract_only; fulltext_deep"
+     },
+     {
+      "name": "frequency_of_mentions_in_document",
+      "type": "integer",
+      "n_nonmissing": 9816,
+      "allowed_values_or_range": "numeric range [1, 216]"
+     },
+     {
+      "name": "location_of_mention",
+      "type": "string",
+      "n_nonmissing": 9816,
+      "allowed_values_or_range": "abstract; abstract|body; abstract|body|conclusion|discussion|introduction|methods|res; abstract|body|conclusion|introduction|keywords|title; abstract|body|conclusion|introduction|title; abstract|body|discussion|introduction|methods|results|title; abstract|body|introduction|title; abstract|conclusion \u2026"
+     },
+     {
+      "name": "in_title",
+      "type": "integer",
+      "n_nonmissing": 9816,
+      "allowed_values_or_range": "0; 1"
+     },
+     {
+      "name": "in_abstract",
+      "type": "integer",
+      "n_nonmissing": 9816,
+      "allowed_values_or_range": "0; 1"
+     },
+     {
+      "name": "in_keywords",
+      "type": "integer",
+      "n_nonmissing": 9816,
+      "allowed_values_or_range": "0; 1"
+     },
+     {
+      "name": "in_body",
+      "type": "integer",
+      "n_nonmissing": 9816,
+      "allowed_values_or_range": "0; 1"
+     },
+     {
+      "name": "in_conclusion",
+      "type": "integer",
+      "n_nonmissing": 9816,
+      "allowed_values_or_range": "0; 1"
+     },
+     {
+      "name": "exact_name_in_source",
+      "type": "string",
+      "n_nonmissing": 9816,
+      "allowed_values_or_range": "ACT-A; ACT-Accelerator; AFRO; ANVISA; APEC; ASEAN; AVAT; Access \nto COVID-19 Tools Accelerator; Access to COVID-19 Tools Accelerator; Afghanistan; Africa CDC; Africa Centres for Disease Control; Africa Group; African Development Bank; African Group; African Medicines Agency; African Union; African V \u2026"
+     },
+     {
+      "name": "all_surface_forms_matched",
+      "type": "string",
+      "n_nonmissing": 9816,
+      "allowed_values_or_range": "ACT-A; ACT-Accelerator; ACT-Accelerator|Access \nto COVID-19 Tools Accelerator; ACT-A|Access to COVID-19 Tools Accelerator; AFRO; AFRO|Regional Office for Africa; AIIB|Asian Infrastructure Investment Bank; ANVISA; ANVISA|Agencia Nacional de Vigilancia Sanitaria; APEC; APEC|Asia-Pacific Economic Coope \u2026"
+     },
+     {
+      "name": "first_char_offset",
+      "type": "integer",
+      "n_nonmissing": 9816,
+      "allowed_values_or_range": "numeric range [0, 191098]"
+     },
+     {
+      "name": "pub_year",
+      "type": "number",
+      "n_nonmissing": 9816,
+      "allowed_values_or_range": "numeric range [1960.0, 2026.0]"
+     },
+     {
+      "name": "corpus_class",
+      "type": "string",
+      "n_nonmissing": 9816,
+      "allowed_values_or_range": "adjacent_governance; core_ghd"
+     },
+     {
+      "name": "doc_type",
+      "type": "string",
+      "n_nonmissing": 9816,
+      "allowed_values_or_range": "abstract; book; book_chapter; book_review; brief_report; comment; comparative study; conference_abstract; conference_paper; dataset; discussion; editorial; historical article; journal article; journal_article; letter; other; paratext; peer_review_report; preprint; reference_entry; report; research s \u2026"
+     },
+     {
+      "name": "citation_count",
+      "type": "number",
+      "n_nonmissing": 9816,
+      "allowed_values_or_range": "numeric range [0.0, 1498.0]"
+     },
+     {
+      "name": "canonical_name",
+      "type": "string",
+      "n_nonmissing": 9816,
+      "allowed_values_or_range": "ALBA; ANVISA; APEC; ASEAN; Access to COVID-19 Tools Accelerator (ACT-A); Afghanistan; Africa CDC; Africa Group (Geneva/WHO negotiating bloc); African Development Bank; African Medicines Agency; African Union; African Vaccine Acquisition Trust; African states (collective); Aga Khan Development Networ \u2026"
+     },
+     {
+      "name": "actor_type",
+      "type": "string",
+      "n_nonmissing": 9816,
+      "allowed_values_or_range": "civil_society; global_health_initiative; informal_coalition; international_financial_institution; international_organization; knowledge_actor; philanthropy; private_sector; regional_organization; state; state_grouping; state_institution"
+     },
+     {
+      "name": "actor_subtype",
+      "type": "string",
+      "n_nonmissing": 9816,
+      "allowed_values_or_range": "academic_centre; academic_journal; advocacy_ngo; aid_role_collective; biotechnology_company; business_forum; cso_generic; developing_country_bloc; development_agency; diaspora_network; diplomatic_mission; disease_partnership; disease_specific_programme; donor_state; donor_state|small_state; emerging \u2026"
+     },
+     {
+      "name": "country_iso3",
+      "type": "string",
+      "n_nonmissing": 5171,
+      "allowed_values_or_range": "AFG; AGO; ALB; ARE; ARG; ARM; ATG; AUS; AUT; AZE; BDI; BEL; BEN; BFA; BGD; BHR; BHS; BIH; BLR; BLZ; BOL; BRA; BRB; BTN; BWA"
+     },
+     {
+      "name": "region",
+      "type": "string",
+      "n_nonmissing": 8330,
+      "allowed_values_or_range": "africa; americas; asia; eastern_mediterranean; europe; global; oceania; western_pacific"
+     },
+     {
+      "name": "substantive_or_incidental",
+      "type": "string",
+      "n_nonmissing": 9816,
+      "allowed_values_or_range": "incidental; substantive"
+     }
+    ],
+    "primaryKey": [
+     "document_id",
+     "actor_id"
+    ]
+   },
+   "description": "Actor-by-document occurrence table: where in each document an actor is mentioned and how often.",
+   "x-foreign-keys-prose": "document_id -> documents.csv; actor_id -> actors.csv"
+  },
+  {
+   "name": "tables__actors",
+   "path": "tables/actors.csv",
+   "profile": "tabular-data-resource",
+   "format": "csv",
+   "encoding": "utf-8",
+   "mediatype": "text/csv",
+   "bytes": 95529,
+   "hash": "sha256:f89554b8d1c729ed42043abadb3599562e36dd879a47907206c62e9710f0aa5f",
+   "rows": 381,
+   "schema": {
+    "fields": [
+     {
+      "name": "actor_id",
+      "type": "string",
+      "n_nonmissing": 381,
+      "allowed_values_or_range": "CLUB-ACTA; CLUB-AFRICA-GROUP; CLUB-ALBA; CLUB-BRICS; CLUB-COVAX; CLUB-EQUITY-GROUP; CLUB-FPGH; CLUB-G20; CLUB-G7; CLUB-G77; CLUB-GHSA; CLUB-GHSI; CLUB-GPMB; CLUB-IBSA; CLUB-IPPPR; CLUB-LANCET-COMM; CLUB-MIKTA; CLUB-NAM; CLUB-QUAD; CLUB-UHC2030; GRP-AFRICAN-STATES; GRP-DONORS; GRP-EMERGING; GRP-FRAGI \u2026"
+     },
+     {
+      "name": "canonical_name",
+      "type": "string",
+      "n_nonmissing": 381,
+      "allowed_values_or_range": "ALBA; ANVISA; APEC; ASEAN; Access to COVID-19 Tools Accelerator (ACT-A); Afghanistan; Africa CDC; Africa Group (Geneva/WHO negotiating bloc); African Development Bank; African Medicines Agency; African Union; African Vaccine Acquisition Trust; African states (collective); Aga Khan Development Networ \u2026"
+     },
+     {
+      "name": "actor_type",
+      "type": "string",
+      "n_nonmissing": 381,
+      "allowed_values_or_range": "civil_society; global_health_initiative; informal_coalition; international_financial_institution; international_organization; knowledge_actor; philanthropy; private_sector; regional_organization; state; state_grouping; state_institution"
+     },
+     {
+      "name": "actor_subtype",
+      "type": "string",
+      "n_nonmissing": 381,
+      "allowed_values_or_range": "academic_centre; academic_journal; advocacy_ngo; aid_role_collective; biotechnology_company; business_forum; cso_generic; developing_country_bloc; development_agency; diaspora_network; diplomatic_mission; disease_partnership; disease_specific_programme; donor_state; donor_state|small_state; emerging \u2026"
+     },
+     {
+      "name": "country_iso3",
+      "type": "string",
+      "n_nonmissing": 235,
+      "allowed_values_or_range": "AFG; AGO; ALB; ARE; ARG; ARM; ATG; AUS; AUT; AZE; BDI; BEL; BEN; BFA; BGD; BHR; BHS; BIH; BLR; BLZ; BOL; BRA; BRB; BTN; BWA"
+     },
+     {
+      "name": "region",
+      "type": "string",
+      "n_nonmissing": 357,
+      "allowed_values_or_range": "africa; americas; asia; eastern_mediterranean; europe; global; oceania; western_pacific"
+     },
+     {
+      "name": "aliases",
+      "type": "string",
+      "n_nonmissing": 381,
+      "allowed_values_or_range": "ANVISA|Agencia Nacional de Vigilancia Sanitaria; Access to COVID-19 Tools Accelerator|ACT-Accelerator|ACT-A; Afghanistan|Afghan government; Africa Centres for Disease Control|Africa CDC|Africa Center ; Africa Group|African Group; African Development Bank|AfDB; African Medicines Agency; African Union \u2026"
+     },
+     {
+      "name": "n_aliases",
+      "type": "integer",
+      "n_nonmissing": 381,
+      "allowed_values_or_range": "1; 2; 3; 4; 5; 6; 7; 8; 9"
+     },
+     {
+      "name": "member_states",
+      "type": "string",
+      "n_nonmissing": 7,
+      "allowed_values_or_range": "ARG|AUS|BRA|CAN|CHN|FRA|DEU|IND|IDN|ITA|JPN|KOR|MEX|RUS|SAU|; BRA|FRA|IDN|NOR|SEN|ZAF|THA; BRA|RUS|IND|CHN|ZAF; CAN|FRA|DEU|ITA|JPN|GBR|USA; IND|BRA|ZAF; MEX|IDN|KOR|TUR|AUS; USA|JPN|IND|AUS"
+     },
+     {
+      "name": "is_collective",
+      "type": "integer",
+      "n_nonmissing": 381,
+      "allowed_values_or_range": "0; 1"
+     },
+     {
+      "name": "multi_class",
+      "type": "integer",
+      "n_nonmissing": 381,
+      "allowed_values_or_range": "0; 1"
+     },
+     {
+      "name": "n_documents",
+      "type": "integer",
+      "n_nonmissing": 381,
+      "allowed_values_or_range": "numeric range [1, 478]"
+     },
+     {
+      "name": "n_documents_deep",
+      "type": "integer",
+      "n_nonmissing": 381,
+      "allowed_values_or_range": "numeric range [0, 290]"
+     },
+     {
+      "name": "n_documents_abstract",
+      "type": "integer",
+      "n_nonmissing": 381,
+      "allowed_values_or_range": "numeric range [0, 326]"
+     },
+     {
+      "name": "total_mentions",
+      "type": "integer",
+      "n_nonmissing": 381,
+      "allowed_values_or_range": "numeric range [1, 4878]"
+     },
+     {
+      "name": "n_docs_title",
+      "type": "integer",
+      "n_nonmissing": 381,
+      "allowed_values_or_range": "0; 1; 10; 11; 12; 15; 16; 17; 186; 2; 26; 3; 4; 47; 48; 5; 54; 6; 68; 7; 8; 9"
+     },
+     {
+      "name": "n_docs_abstract_loc",
+      "type": "integer",
+      "n_nonmissing": 381,
+      "allowed_values_or_range": "numeric range [0, 199]"
+     },
+     {
+      "name": "n_docs_conclusion",
+      "type": "integer",
+      "n_nonmissing": 381,
+      "allowed_values_or_range": "0; 1; 2; 3; 4; 5"
+     },
+     {
+      "name": "first_year",
+      "type": "number",
+      "n_nonmissing": 381,
+      "allowed_values_or_range": "numeric range [1960.0, 2026.0]"
+     },
+     {
+      "name": "last_year",
+      "type": "number",
+      "n_nonmissing": 381,
+      "allowed_values_or_range": "2006.0; 2010.0; 2014.0; 2015.0; 2016.0; 2017.0; 2018.0; 2019.0; 2020.0; 2021.0; 2022.0; 2023.0; 2024.0; 2025.0; 2026.0"
+     },
+     {
+      "name": "n_claim_rows",
+      "type": "integer",
+      "n_nonmissing": 381,
+      "allowed_values_or_range": "numeric range [1, 1073]"
+     },
+     {
+      "name": "n_substantive",
+      "type": "integer",
+      "n_nonmissing": 381,
+      "allowed_values_or_range": "numeric range [0, 939]"
+     },
+     {
+      "name": "n_roles_distinct",
+      "type": "integer",
+      "n_nonmissing": 381,
+      "allowed_values_or_range": "0; 1; 10; 11; 12; 13; 14; 15; 16; 17; 18; 19; 2; 20; 21; 3; 4; 5; 6; 7; 8; 9"
+     },
+     {
+      "name": "roles_observed",
+      "type": "string",
+      "n_nonmissing": 340,
+      "allowed_values_or_range": "advocate/campaigner; advocate/campaigner|agenda setter|bloc leader|broker/bridge-; advocate/campaigner|agenda setter|bloc leader|broker/bridge-; advocate/campaigner|agenda setter|bloc leader|capacity build; advocate/campaigner|agenda setter|bloc leader|capacity build; advocate/campaigner|agenda sett \u2026"
+     }
+    ],
+    "primaryKey": "actor_id"
+   },
+   "description": "Actor registry after entity resolution. One row per normalised actor with type, subtype, aliases and aggregate mention/claim counts."
+  },
+  {
+   "name": "tables__causal_claims",
+   "path": "tables/causal_claims.csv",
+   "profile": "tabular-data-resource",
+   "format": "csv",
+   "encoding": "utf-8",
+   "mediatype": "text/csv",
+   "bytes": 178737,
+   "hash": "sha256:4672b5bfb88740e2bb371bfbb661b37301dce46f77b86fe21e8a69950df0309e",
+   "rows": 635,
+   "schema": {
+    "fields": [
+     {
+      "name": "document_id",
+      "type": "string",
+      "n_nonmissing": 635,
+      "allowed_values_or_range": "GHD-00116; GHD-00143; GHD-00202; GHD-00227; GHD-00241; GHD-00245; GHD-00250; GHD-00267; GHD-00270; GHD-00331; GHD-00361; GHD-00367; GHD-00391; GHD-00400; GHD-00412; GHD-00485; GHD-00516; GHD-00586; GHD-00589; GHD-00592; GHD-00613; GHD-00653; GHD-00661; GHD-00668; GHD-00669"
+     },
+     {
+      "name": "evidence_source",
+      "type": "string",
+      "n_nonmissing": 635,
+      "allowed_values_or_range": "abstract_only; fulltext_deep"
+     },
+     {
+      "name": "sent_id",
+      "type": "integer",
+      "n_nonmissing": 635,
+      "allowed_values_or_range": "numeric range [0, 1314]"
+     },
+     {
+      "name": "char_start",
+      "type": "integer",
+      "n_nonmissing": 635,
+      "allowed_values_or_range": "numeric range [0, 77956]"
+     },
+     {
+      "name": "sentence",
+      "type": "string",
+      "n_nonmissing": 635,
+      "allowed_values_or_range": "( 2011 ), the conceptualizations of global health diplomacy ; (2010) suggested that although the World Health Organization; (2011) proposed that the varying definitions of global healt; (2016) argued that there is an inverse relationship between ; (3) The lack of accountability of donors and their i \u2026"
+     },
+     {
+      "name": "actor_codes",
+      "type": "string",
+      "n_nonmissing": 635,
+      "allowed_values_or_range": "ASEAN; AU; AU;BRICS; Afghanistan;Military; Argentina;Bangladesh;WHO; BRICS; Bangladesh; Brazil; Brazil;Argentina; Brazil;Chile; Brazil;SouthAfrica; Brazil;UN; Brazil;WHO; COVAX; COVAX;MSF; Cambodia; Canada; Canada;Military; Canada;WHO; Chile; China; China;CivilSocietyGeneric; China;EU; China;India;  \u2026"
+     },
+     {
+      "name": "power_codes_dict",
+      "type": "string",
+      "n_nonmissing": 139,
+      "allowed_values_or_range": "agenda_setting_capacity; credibility; credibility;soft_power_resource; development_assistance; financial_power; geopolitical_leverage; geopolitical_leverage;legitimacy;soft_power_resource; information_data_control; information_data_control;geopolitical_leverage; institutional_position; legal_authori \u2026"
+     },
+     {
+      "name": "power_mechanism",
+      "type": "string",
+      "n_nonmissing": 373,
+      "allowed_values_or_range": "access_to_decision_makers; access_to_decision_makers;agenda_setting_capacity;soft_power; access_to_decision_makers;brokerage_power; access_to_decision_makers;convening_power; access_to_decision_makers;institutional_position; access_to_decision_makers;network_centrality; agenda_setting_capacity; agen \u2026"
+     },
+     {
+      "name": "n_mechanisms",
+      "type": "number",
+      "n_nonmissing": 635,
+      "allowed_values_or_range": "0.0; 1.0; 2.0; 3.0"
+     },
+     {
+      "name": "mechanism_stated_verbatim",
+      "type": "boolean",
+      "n_nonmissing": 635,
+      "allowed_values_or_range": "False; True"
+     },
+     {
+      "name": "evidence_strength",
+      "type": "string",
+      "n_nonmissing": 635,
+      "allowed_values_or_range": "comparative_evidence; descriptive_evidence; descriptive_statement; documentary_process_evidence; interviews; process_tracing; quantitative_evidence; theoretical_assertion"
+     },
+     {
+      "name": "claim_type",
+      "type": "string",
+      "n_nonmissing": 635,
+      "allowed_values_or_range": "capacity_attribution; causal_effect; correlation_or_association; descriptive_statement; no_claim; normative_prescription"
+     },
+     {
+      "name": "is_provision_not_influence",
+      "type": "boolean",
+      "n_nonmissing": 635,
+      "allowed_values_or_range": "False; True"
+     },
+     {
+      "name": "outcome_claimed",
+      "type": "string",
+      "n_nonmissing": 413,
+      "allowed_values_or_range": "AU navigates politics, develops strategies, addresses linkag; Awareness and enthusiasm for global health not preserved; BRICS establishes Vaccine Centre; BRICS political and economic influence globally increasing; Bank's influence in developing markets; anti-tobacco policie; Bank's support for anti- \u2026"
+     },
+     {
+      "name": "hedged",
+      "type": "boolean",
+      "n_nonmissing": 635,
+      "allowed_values_or_range": "False; True"
+     },
+     {
+      "name": "llm_hedged",
+      "type": "boolean",
+      "n_nonmissing": 635,
+      "allowed_values_or_range": "False; True"
+     },
+     {
+      "name": "normative",
+      "type": "boolean",
+      "n_nonmissing": 635,
+      "allowed_values_or_range": "False; True"
+     },
+     {
+      "name": "diplomacy_word",
+      "type": "boolean",
+      "n_nonmissing": 635,
+      "allowed_values_or_range": "False; True"
+     },
+     {
+      "name": "citation_count",
+      "type": "number",
+      "n_nonmissing": 635,
+      "allowed_values_or_range": "numeric range [0.0, 247.0]"
+     },
+     {
+      "name": "priority_score",
+      "type": "number",
+      "n_nonmissing": 635,
+      "allowed_values_or_range": "numeric range [1.0, 6.283382533903353]"
+     },
+     {
+      "name": "coding_method",
+      "type": "string",
+      "n_nonmissing": 635,
+      "allowed_values_or_range": "llm_sentence_level"
+     },
+     {
+      "name": "sentence_wordcount",
+      "type": "integer",
+      "n_nonmissing": 635,
+      "description": "Word count of the withheld passage."
+     },
+     {
+      "name": "sentence_sha256_16",
+      "type": "string",
+      "n_nonmissing": 635,
+      "description": "First 16 hex characters of the SHA-256 of the withheld passage after whitespace collapse, strip and casefold. Recompute from your own copy of the source to confirm you located the passage we coded."
+     }
+    ],
+    "primaryKey": [
+     "document_id",
+     "sent_id"
+    ]
+   },
+   "description": "Sentence-level causal claims linking a mechanism to an outcome, with claim type, hedging and evidence strength.",
+   "x-foreign-keys-prose": "document_id -> documents.csv; actor_codes -> actor_namespace_crosswalk.csv (multi-valued)"
+  },
+  {
+   "name": "tables__concepts_definitions",
+   "path": "tables/concepts_definitions.csv",
+   "profile": "tabular-data-resource",
+   "format": "csv",
+   "encoding": "utf-8",
+   "mediatype": "text/csv",
+   "bytes": 503627,
+   "hash": "sha256:ebb8d1f112c75d294a620b9e43ef89188b5a77acde9189c068f32137e4c49327",
+   "rows": 253,
+   "schema": {
+    "fields": [
+     {
+      "name": "definition_id",
+      "type": "string",
+      "n_nonmissing": 253,
+      "allowed_values_or_range": "DEF0001; DEF0002; DEF0003; DEF0004; DEF0005; DEF0006; DEF0007; DEF0008; DEF0009; DEF0010; DEF0011; DEF0012; DEF0013; DEF0014; DEF0015; DEF0016; DEF0017; DEF0018; DEF0019; DEF0020; DEF0021; DEF0022; DEF0023; DEF0024; DEF0025"
+     },
+     {
+      "name": "concept",
+      "type": "string",
+      "n_nonmissing": 253,
+      "allowed_values_or_range": "COVID-19 Diplomacy; Disaster Preparedness; Global Health Diplomacy; Peace through Health; brain health diplomacy; coalition diplomacy; counter-norm entrepreneurship; diplomacy on intellectual property and health; dual use in the life sciences; emerging-power health diplomacy; foreign policy for heal \u2026"
+     },
+     {
+      "name": "concept_labels_matched",
+      "type": "string",
+      "n_nonmissing": 252,
+      "allowed_values_or_range": "coalition diplomacy in health; coalition diplomacy in health; vaccine diplomacy; diplomacy on access to medicines; emerging-power health dipl; diplomacy on access to medicines; global health diplomacy; g; diplomacy on intellectual property and health; diplomacy on intellectual property and health; g \u2026"
+     },
+     {
+      "name": "definition_text_or_close_paraphrase",
+      "type": "string",
+      "n_nonmissing": 253,
+      "allowed_values_or_range": "\"global health diplomacy\" aims to capture these multi-level ; A 'scaled up' approach aligning foreign policy with health\u2014s; A bridge enabling international cooperation on public health; A comparative advantage of the Department of Defense in glob; A diplomatic approach to international intervention  \u2026"
+     },
+     {
+      "name": "is_verbatim_quote",
+      "type": "string",
+      "n_nonmissing": 253,
+      "allowed_values_or_range": "no; partial (two short quoted fragments); yes"
+     },
+     {
+      "name": "authors",
+      "type": "string",
+      "n_nonmissing": 247,
+      "allowed_values_or_range": "A Vorontsov; Tatiana Ponka; Eriks Varpahovskis; Abdulaziz Al Otaibi; Abdulkareem Alqahtani; Khalid Alzahrani; Achilles, Kathryn; Sazak, Onur; Wheeler, Thomas; Woods, Auve; Agust\u00edn Ib\u00e1\u00f1ez; Stefanie Danielle Pi\u00f1a\u2010Escudero; Katherine L; Ahmed Al Mandhari; Abdul Ghaffar; Carissa F. Etienne; Aizen J. Mar \u2026"
+     },
+     {
+      "name": "year",
+      "type": "number",
+      "n_nonmissing": 253,
+      "allowed_values_or_range": "numeric range [1956.0, 2026.0]"
+     },
+     {
+      "name": "source_doi_or_id",
+      "type": "string",
+      "n_nonmissing": 253,
+      "allowed_values_or_range": "10.1001/jama.1956.02970140027008; 10.1001/jama.2021.7439; 10.1002/bewi.202080402; 10.1002/bewi.202200009; 10.1002/casp.2848; 10.1002/tie.22302; 10.1007/978-1-349-25902-1; 10.1007/978-1-349-25902-1_1; 10.1007/978-1-349-26882-5_6; 10.1007/978-3-030-89125-1_5; 10.1007/s11948-011-9266-2; 10.1016/S0140-6 \u2026"
+     },
+     {
+      "name": "source_location",
+      "type": "string",
+      "n_nonmissing": 253,
+      "allowed_values_or_range": "BMJ Glob Health, abstract and findings; Bull World Health Organ 85(3), editorial; Globalization and Health 6:14, abstract and framing sections; Lancet Series paper, abstract and body; Milbank Q 89(3):503-523, sections 'Core/Multistakeholder/Inf; Public Health Reports 93(2):114-123; quoted at p.121 b \u2026"
+     },
+     {
+      "name": "evidence_source",
+      "type": "string",
+      "n_nonmissing": 253,
+      "allowed_values_or_range": "abstract_only; fulltext; secondary_quotation_in_fulltext"
+     },
+     {
+      "name": "unit_of_analysis",
+      "type": "string",
+      "n_nonmissing": 252,
+      "allowed_values_or_range": "\"fields of ideas\" \u2014 institutional spaces where expert commun; Asian state actors and their institutional participation in ; BRICS countries (Brazil, Russia, India, China, South Africa); BRICS countries (Brazil, Russia, India, China, South Africa); Bilateral state-to-state arrangements and negotiatio \u2026"
+     },
+     {
+      "name": "actors_included",
+      "type": "string",
+      "n_nonmissing": 251,
+      "allowed_values_or_range": "Adversarial actors; Sweden; Nordic states; European Union; p; American Red Cross Commission, Foreign Operations Administra; Australian government; regional partners (Indo-Pacific); eme; Authoritarian powers (China, Russia); liberal Western-based ; BRICS member states; implied: multilateral governanc \u2026"
+     },
+     {
+      "name": "activities_included",
+      "type": "string",
+      "n_nonmissing": 253,
+      "allowed_values_or_range": "Adoption of formal global health policy positions; developme; Agenda-setting for health in diplomacy; integration of globa; Aid provision, peace-making, investment projects, security p; Aid provision; budget support; influence competition; geopol; Application of scientific advancements through techn \u2026"
+     },
+     {
+      "name": "mechanism_of_influence",
+      "type": "string",
+      "n_nonmissing": 251,
+      "allowed_values_or_range": "A state's perceived reputation as a norm entrepreneur in spe; Actors draw into international regimes established by states; Addressing structural drivers of poor mental health and soci; Agency-based: entrepreneurs champion and institutionalize no; Alleviating suffering and providing stability to den \u2026"
+     },
+     {
+      "name": "expected_outcomes",
+      "type": "string",
+      "n_nonmissing": 251,
+      "allowed_values_or_range": "Accumulation of political, economic, and security benefits f; Achievement of specific foreign policy goals; construction o; Active development of competitive 'fields of ideas' that ena; Adoption of PtH framework across multiple medical schools; d; Advancement of both public health objectives (e.g.,  \u2026"
+     },
+     {
+      "name": "theoretical_lineage",
+      "type": "string",
+      "n_nonmissing": 253,
+      "allowed_values_or_range": "1990s humanitarian intervention literature; post-Cold War pe; Analyzed using Global Health Diplomacy Pyramid and Blouin & ; Bernalism; history of science; history of scientific interna; Broad approach to humanitarian diplomacy; historicism and co; Builds on 'Peace through Health' framework (1990s) c \u2026"
+     },
+     {
+      "name": "relationship_to_diplomacy",
+      "type": "string",
+      "n_nonmissing": 251,
+      "allowed_values_or_range": "Achieved through multilateral diplomatic process culminating; Alternative diplomatic channel used alongside sports, arts, ; Central: diplomacy is the vehicle through which emerging pow; Central: health diplomacy as distinct diplomatic sphere wher; Central: positions health as a diplomatic vehicle en \u2026"
+     },
+     {
+      "name": "relationship_to_foreign_policy",
+      "type": "string",
+      "n_nonmissing": 244,
+      "allowed_values_or_range": "Adaptation of foreign policy to geostrategic constraints (lo; Addresses border conflicts and blockades as foreign policy c; Advances U.S. National Military Strategy and regional object; Advances foreign policy goals (political legitimacy, coopera; Agriculture and climate policy are core foreign poli \u2026"
+     },
+     {
+      "name": "relationship_to_global_health_governance",
+      "type": "string",
+      "n_nonmissing": 201,
+      "allowed_values_or_range": "Addresses food security (nutrition dimension of global healt; Addresses governance challenge of managing international tra; Addresses health capacity gaps in developing nations; provid; Addresses institutional response to health emergencies; emph; Addresses persistent health inequities and inadequat \u2026"
+     },
+     {
+      "name": "criticisms_or_disputes",
+      "type": "string",
+      "n_nonmissing": 147,
+      "allowed_values_or_range": "Abstract identifies potential pitfalls: assumptions of giver; Accused of disguising geopolitical objectives as health assi; Acknowledges challenges to building peace 'from below'; emph; Acknowledges dual-use vulnerability: health and medicine sus; Aid risks unintentionally fuelling conflict dynamics \u2026"
+     },
+     {
+      "name": "supersedes_or_responds_to",
+      "type": "string",
+      "n_nonmissing": 249,
+      "allowed_values_or_range": "1990s discourse on neutrality in humanitarian assistance; Co; 19th-century global health threats; contemporary globalizati; 2009 DoD humanitarian assistance policy guidance; UN Hyogo F; 2014 Ebola outbreak response failures; vaccine nationalism; ; 2015 UNFCCC negotiation cycle; global food security  \u2026"
+     },
+     {
+      "name": "meaning_shift",
+      "type": "string",
+      "n_nonmissing": 167,
+      "allowed_values_or_range": "Application of 'norm entrepreneurship' to ideational/values ; Article traces evolution from Maoist health diplomacy throug; COVID-19 accelerated and amplified an existing securitizatio; Challenges idealized 'win-win' framing of politics-science c; Concept applied here to human rights but framed as g \u2026"
+     },
+     {
+      "name": "venue",
+      "type": "string",
+      "n_nonmissing": 225,
+      "allowed_values_or_range": "AEGIS Journal of International Relations; ANU Open Research (Australian National University); Advances in public policy and administration (APPA) book ser; Agritrop (Cirad); American Journal of Public Health; Annals of Tropical Medicine and Parasitology; Anuario Asia Pac\u00edfico el Colegio de M\u00e9xico; A \u2026"
+     },
+     {
+      "name": "language",
+      "type": "string",
+      "n_nonmissing": 250,
+      "allowed_values_or_range": "en; es; fr; ru"
+     },
+     {
+      "name": "cited_by_count",
+      "type": "number",
+      "n_nonmissing": 246,
+      "allowed_values_or_range": "numeric range [0.0, 533.0]"
+     },
+     {
+      "name": "in_corpus_A",
+      "type": "boolean",
+      "n_nonmissing": 253,
+      "allowed_values_or_range": "False; True"
+     },
+     {
+      "name": "oa_id",
+      "type": "string",
+      "n_nonmissing": 246,
+      "allowed_values_or_range": "https://openalex.org/W108846922; https://openalex.org/W1135023543; https://openalex.org/W1176785578; https://openalex.org/W1413749372; https://openalex.org/W1485483285; https://openalex.org/W1521424135; https://openalex.org/W1530653275; https://openalex.org/W1552382012; https://openalex.org/W1555573 \u2026"
+     },
+     {
+      "name": "notes",
+      "type": "string",
+      "n_nonmissing": 253,
+      "allowed_values_or_range": "Actor set and empirical examples are explicitly US-centred, ; CLOSED ACCESS - full text NOT retrievable (Unpaywall, Semant; EARLIEST LOCATED use of 'medical diplomacy' in this literatu; Explicit normative reference point: global health equity; Extracted from title+abstract only; not verified against \u2026"
+     },
+     {
+      "name": "anchor",
+      "type": "boolean",
+      "n_nonmissing": 253,
+      "allowed_values_or_range": "False; True"
+     },
+     {
+      "name": "definition_text_or_close_paraphrase_wordcount",
+      "type": "number",
+      "n_nonmissing": 8,
+      "description": "Word count of the withheld passage."
+     },
+     {
+      "name": "definition_text_or_close_paraphrase_sha256_16",
+      "type": "string",
+      "n_nonmissing": 8,
+      "description": "First 16 hex characters of the SHA-256 of the withheld passage after whitespace collapse, strip and casefold. Recompute from your own copy of the source to confirm you located the passage we coded."
+     }
+    ],
+    "primaryKey": "definition_id"
+   },
+   "description": "Extracted definitions of GHD and adjacent concepts, with the analytic attributes of each definition (unit of analysis, actors, activities, mechanism).",
+   "x-foreign-keys-prose": "source_doi_or_id -> documents.doi (DOI string, NOT document_id; 95 of 250 distinct ids resolve)"
+  },
+  {
+   "name": "tables__diplomatic_actions",
+   "path": "tables/diplomatic_actions.csv",
+   "profile": "tabular-data-resource",
+   "format": "csv",
+   "encoding": "utf-8",
+   "mediatype": "text/csv",
+   "bytes": 425646,
+   "hash": "sha256:9554ad963b61a0d252d954666addc6fcf9596a3767d6b2dd5c9d67faad427b01",
+   "rows": 2876,
+   "schema": {
+    "fields": [
+     {
+      "name": "document_id",
+      "type": "string",
+      "n_nonmissing": 2876,
+      "allowed_values_or_range": "GHD-00004; GHD-00012; GHD-00029; GHD-00035; GHD-00036; GHD-00040; GHD-00048; GHD-00061; GHD-00079; GHD-00086; GHD-00090; GHD-00091; GHD-00100; GHD-00114; GHD-00115; GHD-00116; GHD-00124; GHD-00128; GHD-00129; GHD-00133; GHD-00143; GHD-00144; GHD-00160; GHD-00163; GHD-00175"
+     },
+     {
+      "name": "evidence_source",
+      "type": "string",
+      "n_nonmissing": 2876,
+      "allowed_values_or_range": "abstract_only; fulltext_deep"
+     },
+     {
+      "name": "n_chars_evidence",
+      "type": "integer",
+      "n_nonmissing": 2876,
+      "allowed_values_or_range": "numeric range [34, 314708]"
+     },
+     {
+      "name": "action_code",
+      "type": "string",
+      "n_nonmissing": 2876,
+      "allowed_values_or_range": "advocacy; agenda_setting; bilateral_negotiation; bridge_building; brokerage; capacity_building; ceasefire_corridor_negotiation; chairing_negotiations; coalition_building; consensus_building; convening; creation_of_global_health_initiatives; data_or_pathogen_sharing; development_cooperation; diplomat \u2026"
+     },
+     {
+      "name": "action_label",
+      "type": "string",
+      "n_nonmissing": 2876,
+      "allowed_values_or_range": "Advocacy; Agenda-setting; Bilateral negotiation; Bridge building; Brokerage; Capacity building; Ceasefire / humanitarian-corridor negotiation; Chairing negotiations / presiding; Coalition building and leadership; Consensus building; Convening; Creation of global health initiatives; Data or pathogen  \u2026"
+     },
+     {
+      "name": "action_family",
+      "type": "string",
+      "n_nonmissing": 2876,
+      "allowed_values_or_range": "agenda_norms; negotiation; peace_security; representation; resources; technical_scientific"
+     },
+     {
+      "name": "n_mentions",
+      "type": "integer",
+      "n_nonmissing": 2876,
+      "allowed_values_or_range": "numeric range [1, 172]"
+     },
+     {
+      "name": "n_action_sentences",
+      "type": "integer",
+      "n_nonmissing": 2876,
+      "allowed_values_or_range": "numeric range [1, 60]"
+     },
+     {
+      "name": "n_action_sentences_with_diplomacy_word",
+      "type": "integer",
+      "n_nonmissing": 2876,
+      "allowed_values_or_range": "numeric range [0, 53]"
+     },
+     {
+      "name": "first_char_offset",
+      "type": "integer",
+      "n_nonmissing": 2876,
+      "allowed_values_or_range": "numeric range [0, 197285]"
+     },
+     {
+      "name": "explicitly_called_diplomacy",
+      "type": "boolean",
+      "n_nonmissing": 2876,
+      "allowed_values_or_range": "False; True"
+     },
+     {
+      "name": "within_cited_ghd_definition",
+      "type": "boolean",
+      "n_nonmissing": 2876,
+      "allowed_values_or_range": "False; True"
+     },
+     {
+      "name": "within_any_diplomacy_definition",
+      "type": "boolean",
+      "n_nonmissing": 2876,
+      "allowed_values_or_range": "False; True"
+     },
+     {
+      "name": "analytical_inference_only",
+      "type": "boolean",
+      "n_nonmissing": 2876,
+      "allowed_values_or_range": "False; True"
+     },
+     {
+      "name": "coding_method",
+      "type": "string",
+      "n_nonmissing": 2876,
+      "allowed_values_or_range": "dictionary_v3"
+     },
+     {
+      "name": "validated_precision",
+      "type": "number",
+      "n_nonmissing": 2876,
+      "allowed_values_or_range": "0.0; 0.4; 0.5; 0.6; 0.7; 0.7777777777777778; 0.8; 0.8333333333333334; 0.8571428571428571; 0.9; 1.0"
+     },
+     {
+      "name": "n_validated",
+      "type": "integer",
+      "n_nonmissing": 2876,
+      "allowed_values_or_range": "1; 10; 3; 5; 6; 7; 9"
+     },
+     {
+      "name": "low_precision_flag",
+      "type": "boolean",
+      "n_nonmissing": 2876,
+      "allowed_values_or_range": "False; True"
+     }
+    ],
+    "primaryKey": [
+     "document_id",
+     "action_code"
+    ]
+   },
+   "description": "Action codes detected per document, with whether the source explicitly calls the action diplomacy and whether it falls inside any cited definition's activity scope.",
+   "x-foreign-keys-prose": "document_id -> documents.csv; action_code -> product6_action_codebook.md"
+  },
+  {
+   "name": "tables__documents",
+   "path": "tables/documents.csv",
+   "profile": "tabular-data-resource",
+   "format": "csv",
+   "encoding": "utf-8",
+   "mediatype": "text/csv",
+   "bytes": 2487153,
+   "hash": "sha256:007fb7c7c8fb98b7c956fe93354c6e31a3077086f67be029ef2dde5645b72bad",
+   "rows": 3395,
+   "schema": {
+    "fields": [
+     {
+      "name": "document_id",
+      "type": "string",
+      "n_nonmissing": 3395,
+      "allowed_values_or_range": "GHD-00001; GHD-00002; GHD-00003; GHD-00004; GHD-00007; GHD-00012; GHD-00014; GHD-00019; GHD-00020; GHD-00026; GHD-00029; GHD-00030; GHD-00031; GHD-00033; GHD-00035; GHD-00036; GHD-00037; GHD-00039; GHD-00040; GHD-00041; GHD-00042; GHD-00044; GHD-00045; GHD-00047; GHD-00048"
+     },
+     {
+      "name": "title",
+      "type": "string",
+      "n_nonmissing": 3395,
+      "allowed_values_or_range": "\"Digital global health diplomacy\" for climate change and hum; \"One Health\" and global health governance: Design and implem; &lt;div&gt; &amp;nbsp;Malaria Diplomacy in Practice:&amp;nbs; &lt;div&gt; Future Pandemics and Adoption of Public Health D; &lt;i&gt;Journal of Science Policy &amp; Governance: \u2026"
+     },
+     {
+      "name": "authors",
+      "type": "string",
+      "n_nonmissing": 3259,
+      "allowed_values_or_range": " ; - Lucia Tamara Maharani; A Iyer; S Luffy; A Newton-Levinson; R Rochat; B Cooper; A. Mead Over; A. Qalbi Faathimah Azzahra; A. Safril Mubah; Sarah Anabarja; A. Schultz; A. V. Boreyko; AKM Ahsan Ullah; ALINE ESTEFANE MACHADO FIGUEIREDO; Beatriz Helena Wolpe; STE; AUDU D(MMM; Abbie-Rose Hampton; Mar \u2026"
+     },
+     {
+      "name": "author_affiliations",
+      "type": "string",
+      "n_nonmissing": 1533,
+      "allowed_values_or_range": ", Virginia Tech 900 N. Glebe Rd., Arlington, VA, 220-3-1822,; 1International Affairs Department,Iranian Blood Transfusion ; Aalborg University|DK; Aberystwyth University; Aberystwyth University|GB; Aberystwyth University|GB; University of Wales|GB; Academia Sinica|TW; National Chengchi University|TW \u2026"
+     },
+     {
+      "name": "pub_year",
+      "type": "number",
+      "n_nonmissing": 3353,
+      "allowed_values_or_range": "numeric range [1945.0, 2026.0]"
+     },
+     {
+      "name": "venue",
+      "type": "string",
+      "n_nonmissing": 3093,
+      "allowed_values_or_range": "13th World Congress on Public Health (April 23-27, 2012); 142nd APHA Annual Meeting and Exposition (November 15 - Nove; 2015 AAAS Annual Meeting (12-16 February 2015); 2015 APHA Annual Meeting & Expo (Oct. 31 - Nov. 4, 2015); 2017 AAAS Annual Meeting (February 16-20, 2017); ABUAD Journal of Social a \u2026"
+     },
+     {
+      "name": "publisher",
+      "type": "string",
+      "n_nonmissing": 2799,
+      "allowed_values_or_range": "A wholly owned subsidiary of Rowman & Littlefield; AIMS Press; AME Publishing Company; ANU Press; Abant Izzet Baysal University Graduate School of Social Scie; Academia.edu; Academy of Medical Sciences, I.R. Iran; African Field Epidemiology Network; African Journals OnLine; Airlangga University; Ale \u2026"
+     },
+     {
+      "name": "doc_type",
+      "type": "string",
+      "n_nonmissing": 3395,
+      "allowed_values_or_range": "A17; B16; B19; B23; C08; Draft Resolutions and Decisions; Governing Bodies Documents; Governing Bodies documents; Governing body documents; Journal articles; Letters and Notes Verbales; Meeting Records; Meeting reports; NGO Written Statements; Press Releases; Press Releases, Fact Sheets, Newsletters \u2026"
+     },
+     {
+      "name": "doi",
+      "type": "string",
+      "n_nonmissing": 2069,
+      "allowed_values_or_range": "10.1001/amajethics.2023.624; 10.1001/jama.1945.02860140047013; 10.1001/jama.1954.02940460057021; 10.1001/jama.1956.02970140027008; 10.1001/jama.1963.03710010063010; 10.1001/jama.2010.1164; 10.1001/jama.2011.960; 10.1001/jama.2021.7439; 10.1001/jama.264.5.610; 10.1002/0471686786.ebd0196; 10.1002/9780 \u2026"
+     },
+     {
+      "name": "pmid",
+      "type": "number",
+      "n_nonmissing": 668,
+      "allowed_values_or_range": "numeric range [416458.0, 42609736.0]"
+     },
+     {
+      "name": "url",
+      "type": "string",
+      "n_nonmissing": 3225,
+      "allowed_values_or_range": "http://actbr.org.br/uploads/conteudo/515_Impasses_Estrategia; http://aei.pitt.edu/102616/1/2018.5.pdf; http://aei.pitt.edu/103663/1/EU%2DChina_Drop_the_Masks%2C_Ba; http://aei.pitt.edu/97390/1/ELCSID_Policy_Brief_2018_05.pdf; http://arxiv.org/abs/1710.11039; http://arxiv.org/abs/1710.11039v1; http:/ \u2026"
+     },
+     {
+      "name": "language",
+      "type": "string",
+      "n_nonmissing": 3280,
+      "allowed_values_or_range": "ar; ar; zh; en; fr; ru; es; ar; zh; en; fr; ru; es; de; pt-pt; arachiengfrerusspa; arachiengfresparus; cs; de; en; en; ar; zh; en; ar; zh; fr; ru; es; en; ar; zh; fr; ru; es; az; en; ar; zh; uk; en; fa; en; fr; en; fr; es; en; pt; en; ru; en; th; en; zh; ar; en; zh; ar; fa; pt; uk; eng; eng ; engara \u2026"
+     },
+     {
+      "name": "country_region_studied",
+      "type": "string",
+      "n_nonmissing": 1555,
+      "allowed_values_or_range": "Argentina; Australia; Australia; China; Australia; China; USA; Australia; China; USA; Russia; Vietnam; Australia; China; USA; UK; Australia; Germany; Indonesia; USA; Australia; India; China; USA; Australia; Indonesia; Australia; Indonesia; China; USA; Russia; Australia; Indonesia; Japan; India; Sing \u2026"
+     },
+     {
+      "name": "empirical_theoretical_review",
+      "type": "string",
+      "n_nonmissing": 488,
+      "allowed_values_or_range": "empirical; empirical; review; empirical; review; theoretical; empirical; theoretical; review; review; theoretical; theoretical"
+     },
+     {
+      "name": "research_method",
+      "type": "string",
+      "n_nonmissing": 415,
+      "allowed_values_or_range": "bibliometric/network analysis; bibliometric/network analysis; systematic review; case study; case study; document/content analysis; case study; document/content analysis; quantitative/statisti; case study; ethnography; case study; quantitative/statistical; case study; quantitative/statistical; ethno \u2026"
+     },
+     {
+      "name": "database_retrieved",
+      "type": "string",
+      "n_nonmissing": 3395,
+      "allowed_values_or_range": "CSIS website (sitemap harvest); UN Digital Library; WHO IRIS; arxiv; crossref; crossref; europepmc; openalex; crossref; openalex; crossref; openalex (think-tank publisher); europepmc; europepmc; openalex; openalex; openalex (think-tank publisher)"
+     },
+     {
+      "name": "citation_count",
+      "type": "number",
+      "n_nonmissing": 2477,
+      "allowed_values_or_range": "numeric range [0.0, 1498.0]"
+     },
+     {
+      "name": "keywords",
+      "type": "string",
+      "n_nonmissing": 3020,
+      "allowed_values_or_range": "ACCOUNTABILITY; GOVERNANCE; FINANCE; HEALTH; HEALTH POLICY; ; AVIAN INFLUENZA; Abdominal surgery; Cardiac surgery; Vascular surgery; Cardio; Abortion; Coronavirus disease 2019 (COVID-19); Foreign polic; Abortion; Maternal mortality; United States; Family Planning; Abortion; Reproductive rights; Huma \u2026"
+     },
+     {
+      "name": "health_issue",
+      "type": "string",
+      "n_nonmissing": 2112,
+      "allowed_values_or_range": "AMR; AMR; NCDs; AMR; NCDs; UHC/health systems; AMR; UHC/health systems; AMR; UHC/health systems; health security; AMR; climate & health; AMR; health security; AMR; mental health; climate & health; AMR; mental health; health security; COVID-19; COVID-19; AMR; COVID-19; AMR; health security; COVID-19; \u2026"
+     },
+     {
+      "name": "diplomatic_arena",
+      "type": "string",
+      "n_nonmissing": 1716,
+      "allowed_values_or_range": "ASEAN; ASEAN; Bilateral; ASEAN; COVAX; Bilateral; African Union; African Union; Bilateral; African Union; WTO/TRIPS; African Union; World Bank; BRICS; BRICS; Bilateral; BRICS; EU; BRICS; WTO/TRIPS; Bilateral; COVAX; COVAX; Bilateral; EU; EU; ASEAN; EU; ASEAN; Bilateral; EU; African Union; EU; Africa \u2026"
+     },
+     {
+      "name": "ghd_definition_used",
+      "type": "string",
+      "n_nonmissing": 167,
+      "allowed_values_or_range": "definitional statement present in title/abstract"
+     },
+     {
+      "name": "theoretical_framework",
+      "type": "string",
+      "n_nonmissing": 527,
+      "allowed_values_or_range": "complexity/CAS; constructivism; constructivism; global governance theory; constructivism; global governance theory; political economy; constructivism; norm diffusion/life cycle; global governance; constructivism; political economy; feminist; global governance theory; global governance theory; comple \u2026"
+     },
+     {
+      "name": "principal_argument",
+      "type": "number",
+      "n_nonmissing": 0
+     },
+     {
+      "name": "actors_discussed",
+      "type": "string",
+      "n_nonmissing": 2109,
+      "allowed_values_or_range": "PPP/global funds; UN agencies; UN agencies; PPP/global funds; UN agencies; epistemic community/experts; UN agencies; industry/pharma; UN agencies; industry/pharma; civil society/NGO; UN agencies; industry/pharma; civil society/NGO; epistemic c; UN agencies; industry/pharma; epistemic community/exper \u2026"
+     },
+     {
+      "name": "middle_powers_discussed",
+      "type": "string",
+      "n_nonmissing": 790,
+      "allowed_values_or_range": "Australia; Australia; Germany; Indonesia; Australia; India; Australia; Indonesia; Australia; Indonesia; Japan; India; Singapore; Australia; Indonesia; Mexico; Turkey; South Korea; Australia; Japan; India; Australia; New Zealand; Australia; South Korea; Brazil; Brazil; Cuba; Brazil; France; Brazil; I \u2026"
+     },
+     {
+      "name": "funding_discussed",
+      "type": "string",
+      "n_nonmissing": 3395,
+      "allowed_values_or_range": "no; yes"
+     },
+     {
+      "name": "power_discussed",
+      "type": "string",
+      "n_nonmissing": 577,
+      "allowed_values_or_range": "asymmetry; asymmetry; dependency; dependency; discursive/framing; discursive/framing; dependency; discursive/framing; hegemony; discursive/framing; power generic; discursive/framing; power generic; asymmetry; discursive/framing; power generic; asymmetry; dependency; discursive/framing; power generic \u2026"
+     },
+     {
+      "name": "network_concepts_discussed",
+      "type": "string",
+      "n_nonmissing": 321,
+      "allowed_values_or_range": "alliance; alliance; hub; alliance; tie/edge; hub; brokerage; centrality; centrality; alliance; centrality; alliance; hub; centrality; tie/edge; cluster/community; coalition; coalition; alliance; embeddedness; embeddedness; hub; embeddedness; tie/edge; hub; network; network; alliance; network; allian \u2026"
+     },
+     {
+      "name": "major_findings",
+      "type": "number",
+      "n_nonmissing": 0
+     },
+     {
+      "name": "limitations",
+      "type": "number",
+      "n_nonmissing": 0
+     },
+     {
+      "name": "relevance",
+      "type": "string",
+      "n_nonmissing": 51,
+      "allowed_values_or_range": "NO VERIFIABLE IDENTIFIER: record retrieved without DOI/PMID/"
+     },
+     {
+      "name": "corpus_class",
+      "type": "string",
+      "n_nonmissing": 3395,
+      "allowed_values_or_range": "adjacent_governance; core_ghd; institutional_policy; think_tank_report"
+     },
+     {
+      "name": "corpus_group",
+      "type": "string",
+      "n_nonmissing": 3395,
+      "allowed_values_or_range": "A; B; C"
+     },
+     {
+      "name": "first_author_country",
+      "type": "string",
+      "n_nonmissing": 1430,
+      "allowed_values_or_range": "AE; AL; AR; AT; AU; AZ; BA; BD; BE; BF; BG; BN; BR; BW; BY; CA; CG; CH; CL; CM; CN; CO; CR; CU; CZ"
+     },
+     {
+      "name": "first_author_region_class",
+      "type": "string",
+      "n_nonmissing": 1430,
+      "allowed_values_or_range": "Global North; Global South"
+     },
+     {
+      "name": "author_country_codes",
+      "type": "string",
+      "n_nonmissing": 1469,
+      "allowed_values_or_range": "AE; AE;CA;US;GB;LB;EG; AE;GB;JO;US; AE;LB;GB;JO; AE;US;GB;CA;LB; AL;BE; AR; AR;CH; AR;UY; AT; AT;GB;NI;CL; AU; AU;BD; AU;CH;ZA; AU;CN; AU;GB; AU;GB;BE;CN; AU;GH; AU;KR; AU;MW;BR;PT;US; AU;PT;US; AU;US; AZ; BA;TR; BD"
+     },
+     {
+      "name": "institutional_identifier",
+      "type": "string",
+      "n_nonmissing": 815,
+      "allowed_values_or_range": "***; 9241591013; 9789241591010; 9789246591015 (Arabic); 978924559; 9241594551; 9789241594554; 9244594552 (Russian); 97892445945; 924258002; 9789240032583 (electronic version); 9789240032590 (print ver; 9789240040120 (electronic version); 9789240040137 (print ver; 9789240041769 (electronic version);  \u2026"
+     },
+     {
+      "name": "n_search_strings_hit",
+      "type": "integer",
+      "n_nonmissing": 3395,
+      "allowed_values_or_range": "1; 10; 11; 12; 13; 2; 3; 4; 5; 6; 7; 8; 9"
+     },
+     {
+      "name": "search_strings",
+      "type": "string",
+      "n_nonmissing": 3395,
+      "allowed_values_or_range": "\"Oslo Ministerial Declaration\"; \"Oslo Ministerial Declaration\";\"foreign policy and global he; \"WHO Framework Convention on Tobacco Control\"; \"World Health Organization\" reform governance;global health ; \"foreign policy and global health\";\"global health and foreig; \"foreign policy and global health\"; \u2026"
+     },
+     {
+      "name": "screener",
+      "type": "string",
+      "n_nonmissing": 3395,
+      "allowed_values_or_range": "hand-repair; llm:sonnet-batch; repository harvest + phrase verification; rule+classifier; web harvest + term filter"
+     },
+     {
+      "name": "screening_rationale",
+      "type": "string",
+      "n_nonmissing": 3395,
+      "allowed_values_or_range": "AIDS policy tied to foreign policy aspiration and internatio; ASEAN vaccine diplomacy for TB, explicit health diplomacy fr; Addresses health diplomacy challenges amid trade protectioni; Advocates prioritizing health explicitly within US foreign p; African Union normative negotiation and diplomacy in \u2026"
+     }
+    ],
+    "primaryKey": "document_id"
+   },
+   "description": "Master bibliographic register for all three corpora. One row per unique document retrieved, screened and included."
+  },
+  {
+   "name": "tables__frames",
+   "path": "tables/frames.csv",
+   "profile": "tabular-data-resource",
+   "format": "csv",
+   "encoding": "utf-8",
+   "mediatype": "text/csv",
+   "bytes": 656662,
+   "hash": "sha256:cf75c3f2a826679f7439f08631a0f5ed41a710b38596680f67186bc2da8787bb",
+   "rows": 6018,
+   "schema": {
+    "fields": [
+     {
+      "name": "document_id",
+      "type": "string",
+      "n_nonmissing": 6018,
+      "allowed_values_or_range": "GHD-00004; GHD-00012; GHD-00029; GHD-00035; GHD-00036; GHD-00037; GHD-00048; GHD-00061; GHD-00062; GHD-00066; GHD-00079; GHD-00083; GHD-00086; GHD-00090; GHD-00091; GHD-00100; GHD-00114; GHD-00115; GHD-00116; GHD-00124; GHD-00128; GHD-00129; GHD-00133; GHD-00142; GHD-00143"
+     },
+     {
+      "name": "evidence_source",
+      "type": "string",
+      "n_nonmissing": 6018,
+      "allowed_values_or_range": "abstract_only; fulltext_deep"
+     },
+     {
+      "name": "frame_code",
+      "type": "string",
+      "n_nonmissing": 6018,
+      "allowed_values_or_range": "decolonization; development; economic_burden_productivity; ethical_moral; geopolitical_competition; global_public_goods; health_equity; human_rights; human_security; peace_stability; reputation_status; resilience; security; soft_power_frame; solidarity; south_south_frame; sovereignty; strategic_auto \u2026"
+     },
+     {
+      "name": "frame_label",
+      "type": "string",
+      "n_nonmissing": 6018,
+      "allowed_values_or_range": "Decolonization / anti-colonial critique; Development; Economic burden / productivity; Ethical/moral reasoning; Geopolitical competition; Global public goods; Health equity; Human rights; Human security; Peace and stability (health as bridge for peace); Reputation / status seeking; Resilience; Securi \u2026"
+     },
+     {
+      "name": "frame_family",
+      "type": "string",
+      "n_nonmissing": 6018,
+      "allowed_values_or_range": "emergent; labonte_named_not_in_six; labonte_six"
+     },
+     {
+      "name": "unit",
+      "type": "string",
+      "n_nonmissing": 6018,
+      "allowed_values_or_range": "actor_action_frame; document"
+     },
+     {
+      "name": "n_frame_sentences",
+      "type": "integer",
+      "n_nonmissing": 6018,
+      "allowed_values_or_range": "numeric range [1, 60]"
+     },
+     {
+      "name": "n_mentions",
+      "type": "integer",
+      "n_nonmissing": 6018,
+      "allowed_values_or_range": "numeric range [1, 206]"
+     },
+     {
+      "name": "actor_code",
+      "type": "string",
+      "n_nonmissing": 2364,
+      "allowed_values_or_range": "ASEAN; AU; Afghanistan; Argentina; Australia; BRICS; Bangladesh; Belgium; Brazil; CARICOM; CEPI; COVAX; Cambodia; Canada; Chile; China; CivilSocietyGeneric; Cuba; DRC; Denmark; Diaspora; EU; Egypt; EpistemicCommunity; Ethiopia"
+     },
+     {
+      "name": "action_code",
+      "type": "string",
+      "n_nonmissing": 2364,
+      "allowed_values_or_range": "advocacy; agenda_setting; bridge_building; brokerage; capacity_building; ceasefire_corridor_negotiation; coalition_building; consensus_building; convening; creation_of_global_health_initiatives; data_or_pathogen_sharing; development_cooperation; diplomatic_representation; donation_of_commodities; dr \u2026"
+     },
+     {
+      "name": "frame_in_same_sentence_as_action",
+      "type": "boolean",
+      "n_nonmissing": 6018,
+      "allowed_values_or_range": "False; True"
+     },
+     {
+      "name": "frame_in_same_sentence_as_actor",
+      "type": "boolean",
+      "n_nonmissing": 6018,
+      "allowed_values_or_range": "False; True"
+     }
+    ],
+    "primaryKey": [
+     "document_id",
+     "frame_code",
+     "actor_code",
+     "action_code"
+    ]
+   },
+   "description": "Frame codes detected per document, optionally co-located with an actor and/or action in the same sentence.",
+   "x-foreign-keys-prose": "document_id -> documents.csv; actor_code -> actor_namespace_crosswalk.csv -> actors.actor_id"
+  },
+  {
+   "name": "tables__fulltext_inventory",
+   "path": "tables/fulltext_inventory.csv",
+   "profile": "tabular-data-resource",
+   "format": "csv",
+   "encoding": "utf-8",
+   "mediatype": "text/csv",
+   "bytes": 1122865,
+   "hash": "sha256:5fa5e8b00000388a6c929f438226ea43e6048bc4abcd4433aa8bec29c029b8f1",
+   "rows": 2474,
+   "schema": {
+    "fields": [
+     {
+      "name": "document_id",
+      "type": "string",
+      "n_nonmissing": 2474,
+      "allowed_values_or_range": "GHD-00001; GHD-00002; GHD-00003; GHD-00004; GHD-00007; GHD-00012; GHD-00014; GHD-00019; GHD-00020; GHD-00026; GHD-00029; GHD-00030; GHD-00031; GHD-00033; GHD-00035; GHD-00036; GHD-00037; GHD-00039; GHD-00040; GHD-00041; GHD-00042; GHD-00044; GHD-00045; GHD-00047; GHD-00048"
+     },
+     {
+      "name": "title",
+      "type": "string",
+      "n_nonmissing": 2474,
+      "allowed_values_or_range": "\"Digital global health diplomacy\" for climate change and hum; \"One Health\" and global health governance: Design and implem; &lt;div&gt; &amp;nbsp;Malaria Diplomacy in Practice:&amp;nbs; &lt;div&gt; Future Pandemics and Adoption of Public Health D; &lt;i&gt;Journal of Science Policy &amp; Governance: \u2026"
+     },
+     {
+      "name": "authors",
+      "type": "string",
+      "n_nonmissing": 2396,
+      "allowed_values_or_range": " ; - Lucia Tamara Maharani; A Iyer; S Luffy; A Newton-Levinson; R Rochat; B Cooper; A. Mead Over; A. Qalbi Faathimah Azzahra; A. Safril Mubah; Sarah Anabarja; A. Schultz; A. V. Boreyko; AKM Ahsan Ullah; ALINE ESTEFANE MACHADO FIGUEIREDO; Beatriz Helena Wolpe; STE; AUDU D(MMM; Abbie-Rose Hampton; Mar \u2026"
+     },
+     {
+      "name": "pub_year",
+      "type": "number",
+      "n_nonmissing": 2464,
+      "allowed_values_or_range": "numeric range [1945.0, 2026.0]"
+     },
+     {
+      "name": "venue",
+      "type": "string",
+      "n_nonmissing": 2172,
+      "allowed_values_or_range": "13th World Congress on Public Health (April 23-27, 2012); 142nd APHA Annual Meeting and Exposition (November 15 - Nove; 2015 AAAS Annual Meeting (12-16 February 2015); 2015 APHA Annual Meeting & Expo (Oct. 31 - Nov. 4, 2015); 2017 AAAS Annual Meeting (February 16-20, 2017); ABUAD Journal of Social a \u2026"
+     },
+     {
+      "name": "doc_type",
+      "type": "string",
+      "n_nonmissing": 2474,
+      "allowed_values_or_range": "abstract; book; book_chapter; book_review; brief_report; comment; comparative study; conference_abstract; conference_paper; dataset; discussion; editorial; erratum; historical article; journal article; journal_article; letter; other; paratext; peer_review_report; preprint; published erratum; referen \u2026"
+     },
+     {
+      "name": "doc_class",
+      "type": "string",
+      "n_nonmissing": 2474,
+      "allowed_values_or_range": "book/chapter; editorial/letter; journal_article; other; preprint; report/other; thesis"
+     },
+     {
+      "name": "doi",
+      "type": "string",
+      "n_nonmissing": 2066,
+      "allowed_values_or_range": "10.1001/amajethics.2023.624; 10.1001/jama.1945.02860140047013; 10.1001/jama.1954.02940460057021; 10.1001/jama.1956.02970140027008; 10.1001/jama.1963.03710010063010; 10.1001/jama.2010.1164; 10.1001/jama.2011.960; 10.1001/jama.2021.7439; 10.1001/jama.264.5.610; 10.1002/0471686786.ebd0196; 10.1002/9780 \u2026"
+     },
+     {
+      "name": "pmid",
+      "type": "number",
+      "n_nonmissing": 668,
+      "allowed_values_or_range": "numeric range [416458.0, 42609736.0]"
+     },
+     {
+      "name": "language",
+      "type": "string",
+      "n_nonmissing": 2364,
+      "allowed_values_or_range": "ar; cs; de; en; eng; es; fa; fr; id; ja; ko; ng; no; por; pt; ro; ru; spa; tr; uk"
+     },
+     {
+      "name": "lang_class",
+      "type": "string",
+      "n_nonmissing": 2474,
+      "allowed_values_or_range": "English; non-English; unknown"
+     },
+     {
+      "name": "corpus_class",
+      "type": "string",
+      "n_nonmissing": 2474,
+      "allowed_values_or_range": "adjacent_governance; core_ghd"
+     },
+     {
+      "name": "corpus_group",
+      "type": "string",
+      "n_nonmissing": 2474,
+      "allowed_values_or_range": "A"
+     },
+     {
+      "name": "first_author_country",
+      "type": "string",
+      "n_nonmissing": 1430,
+      "allowed_values_or_range": "AE; AL; AR; AT; AU; AZ; BA; BD; BE; BF; BG; BN; BR; BW; BY; CA; CG; CH; CL; CM; CN; CO; CR; CU; CZ"
+     },
+     {
+      "name": "first_author_region_class",
+      "type": "string",
+      "n_nonmissing": 1430,
+      "allowed_values_or_range": "Global North; Global South"
+     },
+     {
+      "name": "citation_count",
+      "type": "number",
+      "n_nonmissing": 2473,
+      "allowed_values_or_range": "numeric range [0.0, 1498.0]"
+     },
+     {
+      "name": "citation_decile",
+      "type": "string",
+      "n_nonmissing": 2473,
+      "allowed_values_or_range": "D1; D10; D2; D3; D4; D5; D6; D7; D8; D9"
+     },
+     {
+      "name": "period",
+      "type": "string",
+      "n_nonmissing": 2474,
+      "allowed_values_or_range": "2000-2009; 2010-2014; 2015-2019; 2020-2026; pre-2000; unknown"
+     },
+     {
+      "name": "priority",
+      "type": "string",
+      "n_nonmissing": 2474,
+      "allowed_values_or_range": "P1; P2; P3; P4; P5"
+     },
+     {
+      "name": "is_seed",
+      "type": "boolean",
+      "n_nonmissing": 2474,
+      "allowed_values_or_range": "False; True"
+     },
+     {
+      "name": "known_paywalled_seed",
+      "type": "boolean",
+      "n_nonmissing": 2474,
+      "allowed_values_or_range": "False; True"
+     },
+     {
+      "name": "pmcid_final",
+      "type": "string",
+      "n_nonmissing": 386,
+      "allowed_values_or_range": "PMC10022394; PMC10069821; PMC10083823; PMC10136764; PMC10166134; PMC10233363; PMC10257564; PMC10261944; PMC10283340; PMC10345817; PMC10596146; PMC10615245; PMC10620483; PMC10632811; PMC10636805; PMC10687756; PMC10689283; PMC10735604; PMC10790121; PMC10865500; PMC11008771; PMC11016140; PMC11029238; P \u2026"
+     },
+     {
+      "name": "pmcid_route",
+      "type": "string",
+      "n_nonmissing": 386,
+      "allowed_values_or_range": "epmc_search; ncbi_idconv"
+     },
+     {
+      "name": "oa_status",
+      "type": "string",
+      "n_nonmissing": 2087,
+      "allowed_values_or_range": "bronze; closed; diamond; gold; green; hybrid"
+     },
+     {
+      "name": "oa_is_oa",
+      "type": "string",
+      "n_nonmissing": 2087,
+      "allowed_values_or_range": "False; True"
+     },
+     {
+      "name": "coding_tier",
+      "type": "string",
+      "n_nonmissing": 2474,
+      "allowed_values_or_range": "abstract_only; fulltext_deep; metadata_only"
+     },
+     {
+      "name": "evidence_source",
+      "type": "string",
+      "n_nonmissing": 2474,
+      "allowed_values_or_range": "abstract_only; fulltext_deep; metadata_only"
+     },
+     {
+      "name": "retrieval_route",
+      "type": "string",
+      "n_nonmissing": 424,
+      "allowed_values_or_range": "europepmc_fulltextxml; ncbi_pmc_efetch; platform_fetcher_pdf; platform_fetcher_pmc_text; scielo_oa_pdf"
+     },
+     {
+      "name": "n_chars_extracted",
+      "type": "integer",
+      "n_nonmissing": 2474,
+      "allowed_values_or_range": "numeric range [0, 314708]"
+     },
+     {
+      "name": "extraction_ok",
+      "type": "boolean",
+      "n_nonmissing": 2474,
+      "allowed_values_or_range": "False; True"
+     },
+     {
+      "name": "failure_reason",
+      "type": "string",
+      "n_nonmissing": 2135,
+      "allowed_values_or_range": "no_oa_status_known_no_retrievable_copy; no_verifiable_identifier_no_retrieval_attempted; oa_flagged_but_no_machine_retrievable_copy_on_reachable_host; paywalled_closed_access_no_oa_location; pmc_indexed_but_publisher_forbids_xml_tdm_download; retrieved_but_too_short_for_deep; retrieved_extraction_qu \u2026"
+     },
+     {
+      "name": "failure_reason_detail",
+      "type": "string",
+      "n_nonmissing": 2135,
+      "allowed_values_or_range": "no_oa_status_known_no_retrievable_copy; no_verifiable_identifier_no_retrieval_attempted; oa_flagged_but_no_machine_retrievable_copy_on_reachable_host; paywalled_closed_access_no_oa_location; retrieved_but_not_machine_readable_as_deep:below_min_deep_ch; retrieved_but_not_machine_readable_as_deep:belo \u2026"
+     },
+     {
+      "name": "abstract_available",
+      "type": "boolean",
+      "n_nonmissing": 2474,
+      "allowed_values_or_range": "False; True"
+     },
+     {
+      "name": "abstract_source",
+      "type": "string",
+      "n_nonmissing": 1717,
+      "allowed_values_or_range": "europepmc; openalex"
+     },
+     {
+      "name": "text_file",
+      "type": "string",
+      "n_nonmissing": 339,
+      "allowed_values_or_range": "texts/GHD-00004.txt; texts/GHD-00012.txt; texts/GHD-00029.txt; texts/GHD-00048.txt; texts/GHD-00061.txt; texts/GHD-00062.txt; texts/GHD-00079.txt; texts/GHD-00091.txt; texts/GHD-00114.txt; texts/GHD-00116.txt; texts/GHD-00124.txt; texts/GHD-00129.txt; texts/GHD-00143.txt; texts/GHD-00144.txt; texts/ \u2026"
+     },
+     {
+      "name": "fulltext_source_url_host",
+      "type": "string",
+      "n_nonmissing": 424,
+      "allowed_values_or_range": "europepmc.org; ncbi.nlm.nih.gov; via_platform_fetcher; www.scielo.br"
+     },
+     {
+      "name": "seed_note",
+      "type": "string",
+      "n_nonmissing": 2,
+      "allowed_values_or_range": "SEED: brief records a retrieved full text in the PARENT work"
+     }
+    ],
+    "primaryKey": "document_id"
+   },
+   "description": "Retrieval and coding-tier assignment for Corpus A only. Records what text was obtained, by which route, and which coding tier the document was assigned to.",
+   "x-foreign-keys-prose": "document_id -> documents.csv"
+  },
+  {
+   "name": "tables__funding_power_claims",
+   "path": "tables/funding_power_claims.csv",
+   "profile": "tabular-data-resource",
+   "format": "csv",
+   "encoding": "utf-8",
+   "mediatype": "text/csv",
+   "bytes": 657694,
+   "hash": "sha256:7a6e99f0c0cd4179415ebc4035bc6f5adb917130cecdd91de9ece70e41a96fc9",
+   "rows": 361,
+   "schema": {
+    "fields": [
+     {
+      "name": "claim_id",
+      "type": "string",
+      "n_nonmissing": 361,
+      "allowed_values_or_range": "FPC-0001; FPC-0002; FPC-0003; FPC-0004; FPC-0005; FPC-0006; FPC-0007; FPC-0008; FPC-0009; FPC-0010; FPC-0011; FPC-0012; FPC-0013; FPC-0014; FPC-0015; FPC-0016; FPC-0017; FPC-0018; FPC-0019; FPC-0020; FPC-0021; FPC-0022; FPC-0023; FPC-0024; FPC-0025"
+     },
+     {
+      "name": "document_id",
+      "type": "string",
+      "n_nonmissing": 361,
+      "allowed_values_or_range": "GHD-00030; GHD-00048; GHD-00061; GHD-00064; GHD-00101; GHD-00102; GHD-00129; GHD-00202; GHD-00227; GHD-00246; GHD-00255; GHD-00267; GHD-00270; GHD-00290; GHD-00319; GHD-00320; GHD-00331; GHD-00354; GHD-00403; GHD-00412; GHD-00446; GHD-00485; GHD-00592; GHD-00599; GHD-00600"
+     },
+     {
+      "name": "coding_pass",
+      "type": "string",
+      "n_nonmissing": 361,
+      "allowed_values_or_range": "abstract_tier_pass; general_pass; who_financing_targeted_pass"
+     },
+     {
+      "name": "evidence_source",
+      "type": "string",
+      "n_nonmissing": 361,
+      "allowed_values_or_range": "abstract_only; fulltext_deep"
+     },
+     {
+      "name": "coding_tier",
+      "type": "string",
+      "n_nonmissing": 361,
+      "allowed_values_or_range": "abstract_only; fulltext_deep; metadata_only"
+     },
+     {
+      "name": "unit_of_coding",
+      "type": "string",
+      "n_nonmissing": 361,
+      "allowed_values_or_range": "full_abstract; fulltext_passage_window_1400char; who_financing_instrument_window_1800char"
+     },
+     {
+      "name": "passage_id",
+      "type": "string",
+      "n_nonmissing": 361,
+      "allowed_values_or_range": "A0000; A0002; A0003; A0005; A0006; A0016; A0021; A0025; A0029; A0030; A0031; A0033; A0034; A0035; A0036; A0038; A0039; A0040; A0041; A0042; A0045; A0046; A0047; A0048; A0049"
+     },
+     {
+      "name": "char_start",
+      "type": "number",
+      "n_nonmissing": 269,
+      "allowed_values_or_range": "numeric range [0.0, 253000.0]"
+     },
+     {
+      "name": "funding_source",
+      "type": "string",
+      "n_nonmissing": 345,
+      "allowed_values_or_range": "African Development Bank; unspecified Accelerator; BMGF (Bill & Melinda Gates Foundation); BRICS; BRICS countries (emerging powers); BRICS countries (rising powers); Big Pharma (vaccine oligarchy); Bilateral donors (unnamed); Bill & Melinda Gates Foundation; Bill & Melinda Gates Foundation (BMGF); B \u2026"
+     },
+     {
+      "name": "funding_channel",
+      "type": "string",
+      "n_nonmissing": 339,
+      "allowed_values_or_range": "AIDS funding broadly; African Pharmaceutical Technology Foundation; long-term fina; Aid; reliance on funds from HIC actors; Articles 19 and 20 international cooperation and sustainable; Belt and Road Initiative (BRI); Belt and Road Initiative (BRI); health aid; Belt and Road Initiative, Health Road  \u2026"
+     },
+     {
+      "name": "financing_direction",
+      "type": "string",
+      "n_nonmissing": 3,
+      "allowed_values_or_range": "out_of_WHO; third_party_to_third_party"
+     },
+     {
+      "name": "instrument_named",
+      "type": "string",
+      "n_nonmissing": 3,
+      "allowed_values_or_range": "annual budget; assessed contributions; earmarking"
+     },
+     {
+      "name": "recipient",
+      "type": "string",
+      "n_nonmissing": 348,
+      "allowed_values_or_range": "140 countries; 15 focus countries (12 African); 90+ countries across Global South; ASEAN; ASEAN states; Afghanistan (implied); African continent; developing countri; Africa; Africa / African Union; Africa CDC; Global South nations; Africa; developing countries; African CDC; African countries; Africa \u2026"
+     },
+     {
+      "name": "amount_if_reported",
+      "type": "string",
+      "n_nonmissing": 71,
+      "allowed_values_or_range": "$1 billion US; $1.1 billion (malaria, 2023); $1.5 billion (funding shortfall); $10 billion a year; $10 billion in 2007; 70% of proposed US official development; $15 billion (PEPFAR 5 years); $63 billion (Global Health Ini; $2,800,000; $2.85 billion; $21.8 billion (U.S. ODA 2007); 70% devoted to AIDS \u2026"
+     },
+     {
+      "name": "year",
+      "type": "string",
+      "n_nonmissing": 277,
+      "allowed_values_or_range": "1942; 1950 onwards; intensified 1970s; 1953; 1955-2001; 1957-1969; 1958 onwards; 1960s; 1963; 1963 onwards; 1963-1964; 1964-1979; 1968; 1970, 1984-1985; 1970s; 1980s; 1988-2019; 1990s\u20132000s; 1991; 1995-2003; 1996; 1996\u20132007; 2008 onwards; 1999; 1999 (World Bank report); ongoing FCTC negotiations (19 \u2026"
+     },
+     {
+      "name": "issue",
+      "type": "string",
+      "n_nonmissing": 360,
+      "allowed_values_or_range": "AIDS policy; federal spending; policy reform; AIDS relief; family planning; social services; health diplom; AIDS treatment and prevention programmes; AIDS, Tuberculosis, Malaria (ATM) programs; Agenda-setting power; independence of health institutions; a; Aid effectiveness, predictability of funding \u2026"
+     },
+     {
+      "name": "degree_of_earmarking_or_flexibility",
+      "type": "string",
+      "n_nonmissing": 278,
+      "allowed_values_or_range": "Competitively awarded grants for MPOWER-related projects; Earmarked; Earmarked by geopolitical criteria; Earmarked to CEPI; partially channelled through IFFIm; Flexible; embedded in long-term institutional cooperation; Highly earmarked (budgets, targets, metrics directly control; Highly earmarked\u2014he \u2026"
+     },
+     {
+      "name": "diplomatic_objective_claimed",
+      "type": "string",
+      "n_nonmissing": 257,
+      "allowed_values_or_range": "Africa Group advocacy for shared financing mechanism; Agenda-setting through high-level political forums; Building 'global community of common destiny'; being perceiv; China gaining influence within WHO; China-Africa cooperation on 'win-win strategy'; Cold War competition; positioning socialist huma \u2026"
+     },
+     {
+      "name": "political_objective_claimed",
+      "type": "string",
+      "n_nonmissing": 287,
+      "allowed_values_or_range": "Advancing health equity; UHC as cornerstone for health promo; Africa's health sovereignty under New Public Health Order; Alignment with government mental health priorities; America First strategy; security-focused and protectionist a; Attract new professionals into tobacco control field in sele; BRI \u2026"
+     },
+     {
+      "name": "mechanism_of_influence",
+      "type": "string",
+      "n_nonmissing": 348,
+      "allowed_values_or_range": "BMGF positioned itself as honest broker and negotiator betwe; Budgetary and strategic control; direct operating authority ; DAH provision; participation in and development of global he; Dedicated funding enables multi-sectoral collaboration and i; Embedded technical personnel; shared protocols; mult \u2026"
+     },
+     {
+      "name": "concept_financial_importance",
+      "type": "string",
+      "n_nonmissing": 360,
+      "allowed_values_or_range": "no; unclear; yes"
+     },
+     {
+      "name": "concept_diplomatic_influence",
+      "type": "string",
+      "n_nonmissing": 360,
+      "allowed_values_or_range": "no; unclear; yes"
+     },
+     {
+      "name": "concept_network_centrality",
+      "type": "string",
+      "n_nonmissing": 359,
+      "allowed_values_or_range": "no; unclear; yes"
+     },
+     {
+      "name": "concept_agenda_setting",
+      "type": "string",
+      "n_nonmissing": 360,
+      "allowed_values_or_range": "no; unclear; yes"
+     },
+     {
+      "name": "n_concepts_yes",
+      "type": "integer",
+      "n_nonmissing": 361,
+      "allowed_values_or_range": "0; 1; 2; 3; 4"
+     },
+     {
+      "name": "evidence_supporting_causal_claim",
+      "type": "string",
+      "n_nonmissing": 360,
+      "allowed_values_or_range": "'COVID-19 diplomacy' involves provision of assistance while ; 20% increase in assessed contributions reflects commitment t; Abstract claims aid is 'used as a tool of soft power aimed a; Abstract conceptualizes shadow diplomacy as mechanism throug; Abstract frames GEH's influence through Liberal Inte \u2026"
+     },
+     {
+      "name": "outcome",
+      "type": "string",
+      "n_nonmissing": 313,
+      "allowed_values_or_range": "1 billion vaccines delivered to 144 countries; shortfall aga; 67 countries had not reported vaccinations by mid-March 2021; 99% reduction in polio cases since 1988; Africa Group proposal for shared financing mechanism was acc; Africa Group proposal rejected; article 9.5 leaves alignment; African CDC \u2026"
+     },
+     {
+      "name": "evidence_strength",
+      "type": "string",
+      "n_nonmissing": 361,
+      "allowed_values_or_range": "assertion_no_evidence; descriptive_case_evidence; illustrative_example; quantitative_association; systematic_qualitative; unclassified"
+     },
+     {
+      "name": "claim_type",
+      "type": "string",
+      "n_nonmissing": 361,
+      "allowed_values_or_range": "aid_conditionality; assessed_vs_voluntary; donor_coordination; earmarking_distortion; financial_intermediation; funding_as_agenda_setting; funding_as_soft_power; other; philanthropic_power; public_private_financing; rd_financing; resource_dependence; sustainable_financing_reform"
+     },
+     {
+      "name": "who_financing_class",
+      "type": "string",
+      "n_nonmissing": 361,
+      "allowed_values_or_range": "not_who_financing; who_as_recipient_no_instrument_detail; who_financing_core; who_mentioned_with_financing_instrument"
+     },
+     {
+      "name": "who_financing_specific_MODEL_UNRELIABLE",
+      "type": "string",
+      "n_nonmissing": 360,
+      "allowed_values_or_range": "no; unclear; yes"
+     },
+     {
+      "name": "supporting_passage",
+      "type": "string",
+      "n_nonmissing": 288,
+      "allowed_values_or_range": "(1) that global health programs contribute to non-health goa; 20% increase in assessed contributions, reflects the commitm; African CDC is owned and part-funded by the AU's 54 members,; Although health diplomacy is but one element of China's enga; BAT documents suggest that the VdC's lobbying activi \u2026"
+     },
+     {
+      "name": "quote_wordcount",
+      "type": "integer",
+      "n_nonmissing": 361,
+      "allowed_values_or_range": "0; 10; 11; 12; 13; 14; 15; 16; 17; 18; 19; 2; 20; 21; 22; 23; 24; 4; 5; 6; 7; 8; 9",
+      "description": "Word count of the withheld passage."
+     },
+     {
+      "name": "quote_verification",
+      "type": "string",
+      "n_nonmissing": 361,
+      "allowed_values_or_range": "empty; paraphrase_removed_unverifiable; verbatim_elided_fragments; verbatim_exact; verbatim_exact_repaired; verbatim_trimmed"
+     },
+     {
+      "name": "verbatim_quote_available",
+      "type": "boolean",
+      "n_nonmissing": 361,
+      "allowed_values_or_range": "False; True"
+     },
+     {
+      "name": "analytical_inference",
+      "type": "string",
+      "n_nonmissing": 359,
+      "allowed_values_or_range": "Analytical inference - not explicit in abstract: the abstrac; Analytical inference - not explicit in abstract: the mechani; Analytical inference - not explicit in source. Passage asser; Analytical inference - not explicit in source. Passage descr; Analytical inference - not explicit in source. Passa \u2026"
+     },
+     {
+      "name": "notes",
+      "type": "string",
+      "n_nonmissing": 361,
+      "allowed_values_or_range": "Abstract only; makes causal claim (private funding \u2192 influen; Amount ($85 billion) refers to PEPFAR, not Gates Foundation ; Amount and year are from document metadata; the passage itse; Both US and Chinese strategies presented as strategic intent; Canada occupies a network-central position (co-found \u2026"
+     },
+     {
+      "name": "abstract_source",
+      "type": "string",
+      "n_nonmissing": 92,
+      "allowed_values_or_range": "europepmc; openalex"
+     },
+     {
+      "name": "title",
+      "type": "string",
+      "n_nonmissing": 361,
+      "allowed_values_or_range": "4. China and the World Health Organization; A Friend in Need May Not Be a Friend Indeed: Anti-Coronaviru; A career in a Kingdom: Journeys in infection, Mass Gathering; A case study of the expanding role of the OECD in global hea; A friend indeed to friends in need? China's trade regime and; A multi- \u2026"
+     },
+     {
+      "name": "authors",
+      "type": "string",
+      "n_nonmissing": 358,
+      "allowed_values_or_range": "A. V. Boreyko; Adrian Kay; P.J. Carroll; Adri\u00e1n L\u00f3pez-Denis; Aggarwal NK; Kohrt BA; Agyepong IA; M'Cormack-Hale FAO; Brown Amoakoh H; Derkyi-Kwa; Aizatul Anis binti Zuhari; Suyatno Ladiqi; Supriyadi Supriya; Amanda Femalia Rizkiyanti; Hamdan Nafiatur Rosyida; Andrew F. Cooper; Andrew F. Cooper; Asif \u2026"
+     },
+     {
+      "name": "pub_year",
+      "type": "number",
+      "n_nonmissing": 361,
+      "allowed_values_or_range": "1991.0; 2005.0; 2006.0; 2008.0; 2009.0; 2010.0; 2011.0; 2012.0; 2013.0; 2014.0; 2015.0; 2016.0; 2017.0; 2018.0; 2019.0; 2020.0; 2021.0; 2022.0; 2023.0; 2024.0; 2025.0; 2026.0"
+     },
+     {
+      "name": "venue",
+      "type": "string",
+      "n_nonmissing": 351,
+      "allowed_values_or_range": "ACTUAL PROBLEMS OF INTERNATIONAL RELATIONS; ANU Open Research (Australian National University); Abant Sosyal Bilimler Dergisi; Administrative Sciences; Advanced International Journal for Research; Advances in human services and public health (AHSPH) book se; Amsterdam University Press eBooks; Andala \u2026"
+     },
+     {
+      "name": "doc_type",
+      "type": "string",
+      "n_nonmissing": 361,
+      "allowed_values_or_range": "book_chapter; brief_report; discussion; editorial; journal article; journal_article; other; preprint; reference_entry; report; research support, non_u.s. gov't; research_article; review_article; systematic review; thesis"
+     },
+     {
+      "name": "doi",
+      "type": "string",
+      "n_nonmissing": 347,
+      "allowed_values_or_range": "10.1002/gch2.201600001; 10.1002/jia2.26108; 10.1002/jia2.26192; 10.1002/jid.3705; 10.1002/puh2.70245; 10.1002/puh2.70267; 10.1007/978-1-4614-5401-4_17; 10.1007/978-1-4614-5401-4_3; 10.1007/978-1-4614-5401-4_5; 10.1007/978-3-319-95240-6_8; 10.1007/bf03405237; 10.1007/s10597-013-9644-0; 10.1007/s40647 \u2026"
+     },
+     {
+      "name": "pmid",
+      "type": "number",
+      "n_nonmissing": 241,
+      "allowed_values_or_range": "numeric range [1776045.0, 42609736.0]"
+     },
+     {
+      "name": "corpus_group",
+      "type": "string",
+      "n_nonmissing": 361,
+      "allowed_values_or_range": "A"
+     },
+     {
+      "name": "corpus_class",
+      "type": "string",
+      "n_nonmissing": 361,
+      "allowed_values_or_range": "adjacent_governance; core_ghd"
+     },
+     {
+      "name": "first_author_country",
+      "type": "string",
+      "n_nonmissing": 317,
+      "allowed_values_or_range": "AE; AR; AT; AU; BD; BE; BR; CA; CH; CL; CN; CZ; DE; DK; ES; ET; GB; GH; HK; ID; IE; IN; IR; IT; JP"
+     },
+     {
+      "name": "first_author_region_class",
+      "type": "string",
+      "n_nonmissing": 317,
+      "allowed_values_or_range": "Global North; Global South"
+     },
+     {
+      "name": "citation_count",
+      "type": "number",
+      "n_nonmissing": 361,
+      "allowed_values_or_range": "numeric range [0.0, 171.0]"
+     },
+     {
+      "name": "citation_decile",
+      "type": "string",
+      "n_nonmissing": 361,
+      "allowed_values_or_range": "D1; D10; D2; D3; D4; D5; D6; D7; D8; D9"
+     },
+     {
+      "name": "oa_status",
+      "type": "string",
+      "n_nonmissing": 361,
+      "allowed_values_or_range": "bronze; closed; diamond; gold; green; hybrid"
+     },
+     {
+      "name": "screener",
+      "type": "string",
+      "n_nonmissing": 361,
+      "allowed_values_or_range": "llm:sonnet-batch; rule+classifier"
+     },
+     {
+      "name": "supporting_passage_wordcount",
+      "type": "number",
+      "n_nonmissing": 288,
+      "description": "Word count of the withheld passage."
+     },
+     {
+      "name": "supporting_passage_sha256_16",
+      "type": "string",
+      "n_nonmissing": 288,
+      "description": "First 16 hex characters of the SHA-256 of the withheld passage after whitespace collapse, strip and casefold. Recompute from your own copy of the source to confirm you located the passage we coded."
+     }
+    ],
+    "primaryKey": "claim_id"
+   },
+   "description": "Claims linking finance to diplomatic standing, coded against four separable concepts (financial importance, diplomatic influence, network centrality, agenda setting) with the evidence offered for each.",
+   "x-foreign-keys-prose": "document_id -> documents.csv"
+  },
+  {
+   "name": "tables__middle_power_attributions",
+   "path": "tables/middle_power_attributions.csv",
+   "profile": "tabular-data-resource",
+   "format": "csv",
+   "encoding": "utf-8",
+   "mediatype": "text/csv",
+   "bytes": 101527,
+   "hash": "sha256:f56408d0612da2e97a9e287012c88b99fa198ecc6d24e089002dfc008ff30849",
+   "rows": 140,
+   "schema": {
+    "fields": [
+     {
+      "name": "attribution_id",
+      "type": "string",
+      "n_nonmissing": 140,
+      "allowed_values_or_range": "MPA-0001; MPA-0002; MPA-0003; MPA-0004; MPA-0005; MPA-0006; MPA-0007; MPA-0008; MPA-0009; MPA-0010; MPA-0011; MPA-0012; MPA-0013; MPA-0014; MPA-0015; MPA-0016; MPA-0017; MPA-0018; MPA-0019; MPA-0020; MPA-0021; MPA-0022; MPA-0023; MPA-0024; MPA-0025"
+     },
+     {
+      "name": "country",
+      "type": "string",
+      "n_nonmissing": 110,
+      "allowed_values_or_range": "Australia; Brazil; Canada; China; Cuba; France; Germany; India; Indonesia; Japan; Kuwait; Mexico; Netherlands; Norway; Qatar; Singapore; South Africa; South Korea; Sweden; Switzerland; Taiwan; Turkey; United Kingdom; United States; Vietnam"
+     },
+     {
+      "name": "country_as_written",
+      "type": "string",
+      "n_nonmissing": 110,
+      "allowed_values_or_range": "Australia; Brazil; Canada; China; Cuba; France; Germany; India; Indonesia; Japan; Korea; Kuwait; Mexico; Netherlands; Norway; Qatar; Singapore; South Africa; South Korea; Sweden; Switzerland; Taiwan; Turkey; United Kingdom; United States"
+     },
+     {
+      "name": "source_document_id",
+      "type": "string",
+      "n_nonmissing": 140,
+      "allowed_values_or_range": "CR-10.1016/s0140-6736(26)01153-0; CR-10.1017/s1752971923000118; CR-10.1057/s41311-021-00343-y; CR-10.1093/acrefore/9780190228637.013.330; CR-10.1093/ia/iiad225; CR-10.1093/oxfordhb/9780197673546.013.15; CR-10.1111/1758-5899.70100; CR-10.1142/s1013251120400081; CR-10.1177/0020702019834724; CR-10.1177 \u2026"
+     },
+     {
+      "name": "doi",
+      "type": "string",
+      "n_nonmissing": 138,
+      "allowed_values_or_range": "10.1007/978-3-031-52629-9_11; 10.1007/s11366-020-09710-7; 10.1016/s0140-6736(18)30322-2; 10.1016/s0140-6736(22)00583-9; 10.1016/s0140-6736(26)01153-0; 10.1017/s1752971923000118; 10.1057/s41254-021-00224-4; 10.1057/s41311-021-00343-y; 10.1080/17441692.2024.2335360; 10.1093/acrefore/9780190228637.013. \u2026"
+     },
+     {
+      "name": "pmid",
+      "type": "number",
+      "n_nonmissing": 66,
+      "allowed_values_or_range": "23497509.0; 24160168.0; 26635498.0; 29483026.0; 33424219.0; 38626321.0; 40477734.0; 41026749.0; 42330994.0"
+     },
+     {
+      "name": "title",
+      "type": "string",
+      "n_nonmissing": 140,
+      "allowed_values_or_range": "Are national policies on global health in fact national poli; Authoritarian middle powers and the liberal order: Turkey's ; Between a Rock and a Hard Place: The Dilemmas of Middle Powe; Beyond Bamboo Diplomacy; Brokering Peace: Emerging Middle Powers, Agency and Mediatio; COVID\u201019 Vaccine, TRIPS, an \u2026"
+     },
+     {
+      "name": "author",
+      "type": "string",
+      "n_nonmissing": 140,
+      "allowed_values_or_range": "Anders Granmo; Ayd\u0131n-D\u00fczgit Senem; Bobrow Davis B.; Kudrle Robert T.; Brisbois B, Plamondon K, Walugembe D, Pereira RC, Edet C, Di; Bui Tung X.; Chalkidou K, Vega J.; Choi I, Lee J, Kim S, Choi K.; Dang Bui Hai; Glenn John; Dinh Tinh Le; Thu Ngan Vu Thi; Elsada Diana Cassells; Jacqueline Anne Braveb \u2026"
+     },
+     {
+      "name": "year",
+      "type": "number",
+      "n_nonmissing": 140,
+      "allowed_values_or_range": "1987.0; 2013.0; 2015.0; 2017.0; 2018.0; 2019.0; 2020.0; 2021.0; 2022.0; 2023.0; 2024.0; 2025.0; 2026.0"
+     },
+     {
+      "name": "venue",
+      "type": "string",
+      "n_nonmissing": 131,
+      "allowed_values_or_range": "AUSTRAL: Brazilian Journal of Strategy &amp; International R; Academic Journal of Interdisciplinary Studies; BMJ global health; BioMed Research International; Conflict and Health; Discourse-P; F1000Research; Figshare; Foreign Policy Review; Global Governance and The Political South; Global Policy; G \u2026"
+     },
+     {
+      "name": "source_index",
+      "type": "string",
+      "n_nonmissing": 140,
+      "allowed_values_or_range": "corpus; crossref; epmc"
+     },
+     {
+      "name": "in_stage1_corpus",
+      "type": "boolean",
+      "n_nonmissing": 140,
+      "allowed_values_or_range": "False; True"
+     },
+     {
+      "name": "corpus_class",
+      "type": "string",
+      "n_nonmissing": 140,
+      "allowed_values_or_range": "core_ghd; new_search"
+     },
+     {
+      "name": "source_health_domain",
+      "type": "boolean",
+      "n_nonmissing": 140,
+      "allowed_values_or_range": "False; True"
+     },
+     {
+      "name": "evidence_source",
+      "type": "string",
+      "n_nonmissing": 140,
+      "allowed_values_or_range": "abstract_only; fulltext_deep; metadata_only"
+     },
+     {
+      "name": "exact_terminology_used",
+      "type": "string",
+      "n_nonmissing": 140,
+      "allowed_values_or_range": "Middle Power; Middle Powers; Middle and Small States; Middle-Power Indonesia; Niche Diplomacy; Southern middle powers; Southern or emerging middle powers; a middle power; competent regional power; emerging authoritarian middle powers; emerging middle power; emerging middle power agenda; emerging mid \u2026"
+     },
+     {
+      "name": "explicit_middle_power_label",
+      "type": "string",
+      "n_nonmissing": 140,
+      "allowed_values_or_range": "no; yes"
+     },
+     {
+      "name": "alternative_label",
+      "type": "string",
+      "n_nonmissing": 32,
+      "allowed_values_or_range": "emerging middle power; emerging power; major player; major power; niche actor; regional great power; regional power; small developed states; small state"
+     },
+     {
+      "name": "definition_used",
+      "type": "string",
+      "n_nonmissing": 32,
+      "allowed_values_or_range": "Differentiates certain status-anxious states, which hold no ; a country with moderate financial and military resources; a middle power that focuses on reforming rather than affirmi; an evolving identity construct rather than a fixed behaviora; based on the concept of middle global power; countries f \u2026"
+     },
+     {
+      "name": "material_positional_criterion",
+      "type": "string",
+      "n_nonmissing": 30,
+      "allowed_values_or_range": "considered small developed states based on population criter; described as new geopolitical and geoeconomic players; developed countries have higher preparedness including abili; eager to strengthen their positions and to compete against t; economic scale and influence; among the most economically s \u2026"
+     },
+     {
+      "name": "behavioural_criterion",
+      "type": "string",
+      "n_nonmissing": 55,
+      "allowed_values_or_range": "Alliance building to assert greater influence on foreign pol; Ongoing nation building emphasises consensus building and eq; alliance building and collective action to exert influence; alliance building, collective action, and human rights; seek; apply niche diplomacy to maximize their foreign policy \u2026"
+     },
+     {
+      "name": "identity_self_identification_criterion",
+      "type": "string",
+      "n_nonmissing": 13,
+      "allowed_values_or_range": "Australia's identity as a middle power in the context of cha; DFA itself wanted to pursue an emerging middle power agenda;; attempted to establish the 'middle power' category for itsel; elevate its strategic role as a middle power; experiences of ongoing nation building; foreign policy is aspiration \u2026"
+     },
+     {
+      "name": "external_recognition_criterion",
+      "type": "string",
+      "n_nonmissing": 12,
+      "allowed_values_or_range": "described as a recognised leading middle power; deserved unique representation in the halls of international; differentiated within the 'grading of powers' from small sta; lauded for its growing influence in Southeast Asia and robus; perceptions of Canada as a 'beacon of light' and Obama's sta; reco \u2026"
+     },
+     {
+      "name": "relational_network_criterion",
+      "type": "string",
+      "n_nonmissing": 3,
+      "allowed_values_or_range": "South Africa's role in BRICS and IBSA; historical heritage underpinning its international relations; position between great powers and smaller states"
+     },
+     {
+      "name": "niche_diplomacy_criterion",
+      "type": "string",
+      "n_nonmissing": 17,
+      "allowed_values_or_range": "Brazilian health diplomacy characterized as 'niche diplomacy; apply niche diplomacy to maximize foreign policy impact; concentrating resources in specific areas best able to gener; does not seem to realize the potential of a more 'niche' foc; framed as pursuing health diplomacy as a niche area; issu \u2026"
+     },
+     {
+      "name": "criterion_primary",
+      "type": "string",
+      "n_nonmissing": 140,
+      "allowed_values_or_range": "behavioural; identity; niche_issue_specific; positional_material; recognition; relational_network; unstated"
+     },
+     {
+      "name": "evidence_provided",
+      "type": "string",
+      "n_nonmissing": 41,
+      "allowed_values_or_range": "Brazil and South Africa have actively and successfully advoc; Canada was active in the creation of the UN system and has b; China is rolling out a multi-billion health insurance scheme; DFA heads of missions meeting (Feb 2005) reached consensus t; Description of the Global Health Security Initiative \u2026"
+     },
+     {
+      "name": "assertion_only",
+      "type": "string",
+      "n_nonmissing": 140,
+      "allowed_values_or_range": "no; yes"
+     },
+     {
+      "name": "contested_classification",
+      "type": "string",
+      "n_nonmissing": 140,
+      "allowed_values_or_range": "no; yes"
+     },
+     {
+      "name": "behaviours",
+      "type": "string",
+      "n_nonmissing": 84,
+      "allowed_values_or_range": "agenda_setting; coalition_building; agenda_setting; norm_entrepreneurship; bridge_building; bridge_building; facilitation; coalition_building; bridge_building; mediation; status_seeking; reputation_build; coalition_building; coalition_building; agenda_setting; multilateral_activism; n; coalition_bui \u2026"
+     },
+     {
+      "name": "role_casting",
+      "type": "string",
+      "n_nonmissing": 32,
+      "allowed_values_or_range": "broker_great_small; broker_north_south; challenger; challenger; norm_entrepreneur; challenger; reformer; coalition_leader; coalition_leader; norm_entrepreneur; defender_of_existing_order; niche_specialist; norm_entrepreneur; reformer; reformer; challenger"
+     },
+     {
+      "name": "health_issue",
+      "type": "string",
+      "n_nonmissing": 85,
+      "allowed_values_or_range": "AIDS; AIDS/HIV diplomacy; ARV/HIV treatment access, TRIPS flexibilities; COVID-19; COVID-19 containment; vaccine availability; COVID-19 lethality/case fatality; COVID-19 pandemic; COVID-19 pandemic response/quarantine; COVID-19 vaccine availability; COVID-19 vaccines; COVID-19 vaccines / pandemic pr \u2026"
+     },
+     {
+      "name": "diplomatic_arena",
+      "type": "string",
+      "n_nonmissing": 83,
+      "allowed_values_or_range": "ASEAN, ASEAN-plus; Asia-Pacific security order; BRICS; EU / liberal international order; G-20; G20; G20, APEC, ASEAN; Global South; IBSA; IBSA, BRICS, G-20; Indo-Pacific region; Indo-Pacific regional politics; MIKTA; OECD; QUAD (Quadrilateral Security Dialogue); multilateral coopera; Russia-Ukraine  \u2026"
+     },
+     {
+      "name": "specific_action",
+      "type": "string",
+      "n_nonmissing": 101,
+      "allowed_values_or_range": "Active in the creation of the UN system; non-permanent UN Se; Adopted an increasingly assertive/hardline stance toward Chi; Adopts hybrid strategies combining coalition-building, niche; BRICS response to the Covid-19 health crisis as a multilater; Canada initiates the Global Health Security Initiati \u2026"
+     },
+     {
+      "name": "claimed_outcome",
+      "type": "string",
+      "n_nonmissing": 57,
+      "allowed_values_or_range": "Achieving recognition of this target epitomised the capacity; Canada compromised global COVID-19 vaccine equity; Diplomatic confrontation between Australia and China; Increased flexibility, pragmatism, and issue-specific engage; Indonesia expected G20 could provide advantages to both deve; NHS highl \u2026"
+     },
+     {
+      "name": "outcome_is_provision_not_influence",
+      "type": "string",
+      "n_nonmissing": 121,
+      "allowed_values_or_range": "no; yes"
+     },
+     {
+      "name": "coalition_membership",
+      "type": "string",
+      "n_nonmissing": 30,
+      "allowed_values_or_range": "ASEAN, ASEAN-plus; Australia, Italy, Norway, Sweden, UK; BRICS; BRICS; IBSA; Brazil and other states; Brazil, other emerging middle powers, transnational civil so; IBSA; IBSA, BRICS, G-20 (named as possible vehicles); MIKTA; OECD; Quadrilateral Security Dialogue (QUAD); SADC; South Africa and other  \u2026"
+     },
+     {
+      "name": "supporting_passage",
+      "type": "string",
+      "n_nonmissing": 119,
+      "allowed_values_or_range": "As a sharp break from Canada's traditional middle-power role; Australian and Canadian attempts to establish the \u2018middle po; Brazil and South Africa have actively and successfully advoc; Brazil and South Africa worked with other emerging middle po; Canada emerged as a middle power\u2014ie, countries that  \u2026"
+     },
+     {
+      "name": "supporting_passage_location",
+      "type": "string",
+      "n_nonmissing": 140,
+      "allowed_values_or_range": "abstract; char 0-753; char 10048-11841; char 11028-12141; char 12441-13553; char 12609-13721; char 13495-14608; char 14064-15474; char 1727-3282; char 18019-19485; char 18095-19380; char 18724-19837; char 20268-21383; char 20798-21912; char 21915-23027; char 24024-25139; char 24821-26230; char 26967 \u2026"
+     },
+     {
+      "name": "quote_flag",
+      "type": "string",
+      "n_nonmissing": 140,
+      "allowed_values_or_range": "NOT_VERBATIM_dropped; verbatim_verified"
+     },
+     {
+      "name": "supporting_passage_wordcount",
+      "type": "number",
+      "n_nonmissing": 119,
+      "description": "Word count of the withheld passage."
+     },
+     {
+      "name": "supporting_passage_sha256_16",
+      "type": "string",
+      "n_nonmissing": 119,
+      "description": "First 16 hex characters of the SHA-256 of the withheld passage after whitespace collapse, strip and casefold. Recompute from your own copy of the source to confirm you located the passage we coded."
+     },
+     {
+      "name": "exact_terminology_used_sha256_16",
+      "type": "string",
+      "n_nonmissing": 1,
+      "description": "First 16 hex characters of the SHA-256 of the withheld passage after whitespace collapse, strip and casefold. Recompute from your own copy of the source to confirm you located the passage we coded."
+     },
+     {
+      "name": "exact_terminology_used_wordcount",
+      "type": "number",
+      "n_nonmissing": 1,
+      "description": "Word count of the withheld passage."
+     },
+     {
+      "name": "material_positional_criterion_sha256_16",
+      "type": "string",
+      "n_nonmissing": 2,
+      "description": "First 16 hex characters of the SHA-256 of the withheld passage after whitespace collapse, strip and casefold. Recompute from your own copy of the source to confirm you located the passage we coded."
+     },
+     {
+      "name": "material_positional_criterion_wordcount",
+      "type": "number",
+      "n_nonmissing": 2,
+      "description": "Word count of the withheld passage."
+     },
+     {
+      "name": "behavioural_criterion_sha256_16",
+      "type": "string",
+      "n_nonmissing": 4,
+      "description": "First 16 hex characters of the SHA-256 of the withheld passage after whitespace collapse, strip and casefold. Recompute from your own copy of the source to confirm you located the passage we coded."
+     },
+     {
+      "name": "behavioural_criterion_wordcount",
+      "type": "number",
+      "n_nonmissing": 4,
+      "description": "Word count of the withheld passage."
+     },
+     {
+      "name": "identity_self_identification_criterion_sha256_16",
+      "type": "string",
+      "n_nonmissing": 2,
+      "description": "First 16 hex characters of the SHA-256 of the withheld passage after whitespace collapse, strip and casefold. Recompute from your own copy of the source to confirm you located the passage we coded."
+     },
+     {
+      "name": "identity_self_identification_criterion_wordcount",
+      "type": "number",
+      "n_nonmissing": 2,
+      "description": "Word count of the withheld passage."
+     },
+     {
+      "name": "evidence_provided_sha256_16",
+      "type": "string",
+      "n_nonmissing": 1,
+      "description": "First 16 hex characters of the SHA-256 of the withheld passage after whitespace collapse, strip and casefold. Recompute from your own copy of the source to confirm you located the passage we coded."
+     },
+     {
+      "name": "evidence_provided_wordcount",
+      "type": "number",
+      "n_nonmissing": 1,
+      "description": "Word count of the withheld passage."
+     }
+    ],
+    "primaryKey": "attribution_id"
+   },
+   "description": "Every located instance in which a source applies (or withholds) a middle-power label to a named country in a health context, with the theoretical criterion invoked and the evidence offered.",
+   "x-foreign-keys-prose": "country -> middle_power_matrix.csv; source_document_id -> documents.csv for the 87 in-corpus rows only (53 rows cite sources outside Corpus A)"
+  },
+  {
+   "name": "tables__middle_power_matrix",
+   "path": "tables/middle_power_matrix.csv",
+   "profile": "tabular-data-resource",
+   "format": "csv",
+   "encoding": "utf-8",
+   "mediatype": "text/csv",
+   "bytes": 53057,
+   "hash": "sha256:d0a186fdbbe006b2fe99b93b7e3eff107f1c58ca5ef7e84cc38894a097d24b55",
+   "rows": 43,
+   "schema": {
+    "fields": [
+     {
+      "name": "country",
+      "type": "string",
+      "n_nonmissing": 43,
+      "allowed_values_or_range": "Argentina; Australia; Brazil; Canada; Chile; China; Colombia; Cuba; Denmark; Egypt; Ethiopia; France; Germany; India; Indonesia; Israel; Japan; Kenya; Kuwait; Malaysia; Mexico; Netherlands; New Zealand; Nigeria; Norway"
+     },
+     {
+      "name": "label_status",
+      "type": "string",
+      "n_nonmissing": 43,
+      "allowed_values_or_range": "CHECKED - never labelled a middle power in any located sourc; labelled in located literature"
+     },
+     {
+      "name": "north_south_class",
+      "type": "string",
+      "n_nonmissing": 43,
+      "allowed_values_or_range": "Global North; Global South"
+     },
+     {
+      "name": "n_attribution_rows",
+      "type": "integer",
+      "n_nonmissing": 43,
+      "allowed_values_or_range": "0; 1; 11; 14; 2; 21; 3; 4; 5; 6; 8; 9"
+     },
+     {
+      "name": "n_distinct_sources",
+      "type": "integer",
+      "n_nonmissing": 43,
+      "allowed_values_or_range": "0; 1; 10; 2; 3; 4; 5; 6; 8; 9"
+     },
+     {
+      "name": "n_sources_explicitly_middle_power",
+      "type": "integer",
+      "n_nonmissing": 43,
+      "allowed_values_or_range": "0; 1; 10; 2; 3; 4; 6; 9"
+     },
+     {
+      "name": "n_sources_emerging_middle_power",
+      "type": "integer",
+      "n_nonmissing": 43,
+      "allowed_values_or_range": "0; 1; 2; 3"
+     },
+     {
+      "name": "n_sources_emerging_power_not_middle",
+      "type": "integer",
+      "n_nonmissing": 43,
+      "allowed_values_or_range": "0; 1; 2"
+     },
+     {
+      "name": "n_sources_other_label",
+      "type": "integer",
+      "n_nonmissing": 43,
+      "allowed_values_or_range": "0; 1; 2; 3"
+     },
+     {
+      "name": "n_ghd_corpus_sources",
+      "type": "integer",
+      "n_nonmissing": 43,
+      "allowed_values_or_range": "0; 1; 2; 3; 4"
+     },
+     {
+      "name": "n_health_domain_sources",
+      "type": "integer",
+      "n_nonmissing": 43,
+      "allowed_values_or_range": "0; 1; 2; 3; 4; 5; 7"
+     },
+     {
+      "name": "n_sources_with_explicit_health_issue",
+      "type": "integer",
+      "n_nonmissing": 43,
+      "allowed_values_or_range": "0; 1; 2; 3; 5; 7"
+     },
+     {
+      "name": "classification_by_the_literature",
+      "type": "string",
+      "n_nonmissing": 43,
+      "allowed_values_or_range": "emerging power, NOT middle power (n=1); middle power (n=1 sources); middle power (n=1 sources); emerging power, NOT middle power; middle power (n=10 sources); emerging middle power (n=1); middle power (n=2 sources); middle power (n=2 sources); emerging middle power (n=1); oth; middle power (n=2 sour \u2026"
+     },
+     {
+      "name": "our_analytical_classification",
+      "type": "string",
+      "n_nonmissing": 43,
+      "allowed_values_or_range": "ANALYTICAL INFERENCE - not explicit in source: appears in th; ANALYTICAL INFERENCE - not explicit in source: label atteste; ANALYTICAL INFERENCE - not explicit in source: not establish; ANALYTICAL INFERENCE - not explicit in source: repeatedly la; ANALYTICAL INFERENCE - not explicit in source: singl \u2026"
+     },
+     {
+      "name": "confidence_in_attribution",
+      "type": "string",
+      "n_nonmissing": 43,
+      "allowed_values_or_range": "low; moderate; not applicable (no middle-power label); very low (single source)"
+     },
+     {
+      "name": "first_year_any_attribution",
+      "type": "number",
+      "n_nonmissing": 25,
+      "allowed_values_or_range": "2013.0; 2015.0; 2017.0; 2018.0; 2020.0; 2021.0; 2022.0"
+     },
+     {
+      "name": "first_year_explicit_middle_power",
+      "type": "number",
+      "n_nonmissing": 20,
+      "allowed_values_or_range": "2013.0; 2015.0; 2017.0; 2018.0; 2020.0; 2021.0; 2022.0; 2025.0"
+     },
+     {
+      "name": "latest_year",
+      "type": "number",
+      "n_nonmissing": 25,
+      "allowed_values_or_range": "2013.0; 2015.0; 2017.0; 2018.0; 2019.0; 2021.0; 2022.0; 2024.0; 2025.0; 2026.0"
+     },
+     {
+      "name": "attributing_authors",
+      "type": "string",
+      "n_nonmissing": 25,
+      "allowed_values_or_range": "Anders Granmo; Erica Penfold; Pieter Fourie; Fourie P; Chalkidou K; Vega J.; Dinh Tinh Le; Thu Ngan Vu Thi; Bui Tung X.; Elsada Diana Cassells; Jacqueline Anne Braveboy-Wagner; Chal; Fourie P; Ida Susilowati; Anisa Nuryanti Affandi; Cut Jihan Raihana; E; Jones CM; Clavier C; Potvin L; Jones CM; Clav \u2026"
+     },
+     {
+      "name": "exact_terms_used",
+      "type": "string",
+      "n_nonmissing": 25,
+      "allowed_values_or_range": "Middle Powers; emerging powers; Middle-Power Indonesia; middle power; middle-powers; middle ; Niche Diplomacy; major players; emerging middle power; regional hegemon; middle power; emerg; emerging powers; major powers; middle power; middle power; Middle Powers; niche diplomacy; the signature ; middl \u2026"
+     },
+     {
+      "name": "theoretical_criterion_primary_modal",
+      "type": "string",
+      "n_nonmissing": 25,
+      "allowed_values_or_range": "behavioural; identity; niche_issue_specific; positional_material; recognition; unstated"
+     },
+     {
+      "name": "criterion_distribution",
+      "type": "string",
+      "n_nonmissing": 25,
+      "allowed_values_or_range": "behavioural:1; behavioural:11; unstated:5; positional_material:4; identity:; behavioural:7; unstated:2; positional_material:2; relational; niche_issue_specific:1; unstated:1; positional_material:1; positional_material:1; recognition:1; unstated:1; positional_material:1; unstated:1; positional_materi \u2026"
+     },
+     {
+      "name": "criterion_positional_evidence",
+      "type": "string",
+      "n_nonmissing": 16,
+      "allowed_values_or_range": "considered small developed states based on population criter; economic scale and influence; among the most economically su; hegemonic ambitions of larger regional state actors draw sma; regional dominance/central position in SADC; its population;; rising global status of small and medium-sized state \u2026"
+     },
+     {
+      "name": "criterion_behavioural_evidence",
+      "type": "string",
+      "n_nonmissing": 18,
+      "allowed_values_or_range": "attempt to project power and sovereignty through their diplo; boosting middle income countries' ability to serve as value-; efforts to build bridges between developed and developing co; energetic in diplomatic and multilateral affairs; energetic in diplomatic and multilateral affairs; engage the; en \u2026"
+     },
+     {
+      "name": "criterion_identity_evidence",
+      "type": "string",
+      "n_nonmissing": 5,
+      "allowed_values_or_range": "attempted to establish the 'middle power' category for itsel; attempted to establish the 'middle power' category for itsel; elevate its strategic role as a middle power; foreign policy is aspirational; idealistic; and fairly typic; middle power as identity construct used by South Korea to re"
+     },
+     {
+      "name": "criterion_recognition_evidence",
+      "type": "string",
+      "n_nonmissing": 8,
+      "allowed_values_or_range": "described as a recognised leading middle power; deserved unique representation in the halls of international; recognised as an emerging middle power; lauded for its growi; relatively low global status; search for status and ... international recognition"
+     },
+     {
+      "name": "criterion_relational_evidence",
+      "type": "string",
+      "n_nonmissing": 2,
+      "allowed_values_or_range": "South Africa's role in BRICS and IBSA; historical heritage underpinning its international relations"
+     },
+     {
+      "name": "criterion_niche_evidence",
+      "type": "string",
+      "n_nonmissing": 4,
+      "allowed_values_or_range": "framed as pursuing health diplomacy as a niche area; Brazili; niche diplomacy of vaccine donations as Tokyo's signature ap; niche diplomacy pursued within health diplomacy; does not se; title refers to Cuba as 'Still Waging Niche Diplomacy'"
+     },
+     {
+      "name": "main_health_issues",
+      "type": "string",
+      "n_nonmissing": 23,
+      "allowed_values_or_range": "COVID-19; COVID-19 containment; vaccine availability; epidemics; COVID; COVID-19 containment; vaccine availability; post-pandemic gl; COVID-19 pandemic; COVID-19 pandemic response/quarantine; COVID-19 pandemic response/quarantine; epidemics; COVID-19 v; COVID-19 vaccine availability; UHC / health sy \u2026"
+     },
+     {
+      "name": "main_arenas",
+      "type": "string",
+      "n_nonmissing": 25,
+      "allowed_values_or_range": "MIKTA; G20; bilateral; Russia-Ukraine war mediation; minilat; MIKTA; Russia-Ukraine war mediation; EU / liberal internatio; MIKTA; bilateral; WHA; SADC; BRICS; IBSA; multilateral diplomacy (DFA foreign ; bilateral; bilateral (DFID); bilateral; bilateral; Global South; IBSA; WTO; TRIPS Agreement / WT \u2026"
+     },
+     {
+      "name": "coalition_memberships",
+      "type": "string",
+      "n_nonmissing": 13,
+      "allowed_values_or_range": "BRICS; IBSA; SADC; Brazil and other states; Brazil; other em; IBSA; South Africa and other states; South Africa; other eme; MIKTA; MIKTA; South Korea; Australia; Canada grouped as 'stuck' mid; Vaccine Alliance; Vaccine Alliance; Australia; Italy; Norway; Sweden; UK; WHO ; Vaccine Alliance; OECD"
+     },
+     {
+      "name": "behaviours_evidenced",
+      "type": "string",
+      "n_nonmissing": 20,
+      "allowed_values_or_range": "agenda_setting; coalition_building; institutional_innovation; coalition_building; multilateral_activism; coalition_building; strategic_autonomy; niche_specialization; coalition_building; strategic_autonomy; south_south_cooperat; multilateral_activism; multilateral_activism; coalition_building; multi \u2026"
+     },
+     {
+      "name": "coalition_building_evidence",
+      "type": "string",
+      "n_nonmissing": 25,
+      "allowed_values_or_range": "no; yes"
+     },
+     {
+      "name": "brokerage_bridging_evidence",
+      "type": "string",
+      "n_nonmissing": 25,
+      "allowed_values_or_range": "no; yes"
+     },
+     {
+      "name": "norm_entrepreneurship_evidence",
+      "type": "string",
+      "n_nonmissing": 25,
+      "allowed_values_or_range": "no; yes"
+     },
+     {
+      "name": "niche_diplomacy_evidence",
+      "type": "string",
+      "n_nonmissing": 25,
+      "allowed_values_or_range": "no; yes"
+     },
+     {
+      "name": "south_south_role",
+      "type": "string",
+      "n_nonmissing": 25,
+      "allowed_values_or_range": "no; yes"
+     },
+     {
+      "name": "role_castings",
+      "type": "string",
+      "n_nonmissing": 8,
+      "allowed_values_or_range": "broker_north_south; norm_entrepreneur; challenger; coalition_leader; defender_of_existing_order; coalition_leader; norm_entrepren; niche_specialist; niche_specialist; challenger; reformer; reformer; coalition_leader; challenger; norm_entrepreneur"
+     },
+     {
+      "name": "specific_actions",
+      "type": "string",
+      "n_nonmissing": 23,
+      "allowed_values_or_range": "PEPFAR; Global Fund initiatives cited as health diplomacy ex; Rolling out multi-billion health insurance scheme for rural ; South Africa creating closer ties with Brazil to align commo; cited as example the UK can learn from in global health dipl; diplomatic responses to the COVID-19 pandemic aimed  \u2026"
+     },
+     {
+      "name": "claimed_outcomes",
+      "type": "string",
+      "n_nonmissing": 17,
+      "allowed_values_or_range": "NHS highlighted as a resource for informing national reforms; commitment towards regional leadership; Indonesia expected G; commitment towards regional leadership; NHS highlighted as a; commitment towards regional leadership; domestic regime supp; effective in combating non-traditional threats such  \u2026"
+     },
+     {
+      "name": "n_rows_outcome_is_provision_not_influence",
+      "type": "number",
+      "n_nonmissing": 25,
+      "allowed_values_or_range": "0.0; 1.0"
+     },
+     {
+      "name": "n_rows_assertion_only",
+      "type": "number",
+      "n_nonmissing": 25,
+      "allowed_values_or_range": "0.0; 1.0; 13.0; 2.0; 3.0; 4.0; 5.0; 7.0; 8.0; 9.0"
+     },
+     {
+      "name": "pct_rows_assertion_only",
+      "type": "number",
+      "n_nonmissing": 25,
+      "allowed_values_or_range": "0.0; 100.0; 33.3; 50.0; 61.9; 62.5; 66.7; 75.0; 81.8; 83.3; 88.9"
+     },
+     {
+      "name": "n_rows_contested",
+      "type": "number",
+      "n_nonmissing": 25,
+      "allowed_values_or_range": "0.0; 1.0; 2.0; 3.0; 4.0; 7.0"
+     },
+     {
+      "name": "n_sources_with_contradictory_reading",
+      "type": "number",
+      "n_nonmissing": 25,
+      "allowed_values_or_range": "0.0; 1.0; 2.0; 3.0; 4.0"
+     },
+     {
+      "name": "contradictory_interpretations",
+      "type": "string",
+      "n_nonmissing": 13,
+      "allowed_values_or_range": "Article responds to 'growing skepticism questioning MIKTA's ; Article responds to 'growing skepticism questioning MIKTA's ; Article responds to 'growing skepticism questioning MIKTA's ; Article responds to 'growing skepticism questioning MIKTA's ; Critics disagreed with the Conservative government's \u2026"
+     },
+     {
+      "name": "evidence_source_distribution",
+      "type": "string",
+      "n_nonmissing": 25,
+      "allowed_values_or_range": "abstract_only:1; abstract_only:1; fulltext_deep:1; abstract_only:3; abstract_only:4; abstract_only:5; fulltext_deep:1; abstract_only:7; metadata_only:2; abstract_only:8; fulltext_deep:2; metadata_only:1; fulltext_deep:1; fulltext_deep:13; metadata_only:1; fulltext_deep:15; abstract_only:6; fulltext_ \u2026"
+     },
+     {
+      "name": "notes_presence_in_corpus",
+      "type": "string",
+      "n_nonmissing": 18,
+      "allowed_values_or_range": "mentioned in 12 of 425 full texts and 3 of 3,395 corpus reco; mentioned in 13 of 425 full texts and 6 of 3,395 corpus reco; mentioned in 14 of 425 full texts and 8 of 3,395 corpus reco; mentioned in 17 of 425 full texts and 21 of 3,395 corpus rec; mentioned in 17 of 425 full texts and 7 of 3,395 cor \u2026"
+     },
+     {
+      "name": "n_health_domain_sources_explicitly_middle_power",
+      "type": "integer",
+      "n_nonmissing": 43,
+      "allowed_values_or_range": "0; 1; 2; 3; 4; 5; 7"
+     }
+    ],
+    "primaryKey": "country"
+   },
+   "description": "Country-level aggregation of the attribution rows, including the 18 countries checked and never labelled (a negative finding, not evidence breadth)."
+  },
+  {
+   "name": "tables__power_mechanisms",
+   "path": "tables/power_mechanisms.csv",
+   "profile": "tabular-data-resource",
+   "format": "csv",
+   "encoding": "utf-8",
+   "mediatype": "text/csv",
+   "bytes": 232806,
+   "hash": "sha256:db346160b25cc7979cc2f58a30a17cf58a394af5b55c462b4238aa0660969d50",
+   "rows": 892,
+   "schema": {
+    "fields": [
+     {
+      "name": "document_id",
+      "type": "string",
+      "n_nonmissing": 892,
+      "allowed_values_or_range": "GHD-00116; GHD-00143; GHD-00202; GHD-00227; GHD-00245; GHD-00250; GHD-00270; GHD-00331; GHD-00367; GHD-00391; GHD-00485; GHD-00586; GHD-00592; GHD-00653; GHD-00668; GHD-00688; GHD-00697; GHD-00741; GHD-00745; GHD-00798; GHD-00802; GHD-00812; GHD-00815; GHD-00818; GHD-00824"
+     },
+     {
+      "name": "evidence_source",
+      "type": "string",
+      "n_nonmissing": 892,
+      "allowed_values_or_range": "abstract_only; fulltext_deep"
+     },
+     {
+      "name": "sent_id",
+      "type": "integer",
+      "n_nonmissing": 892,
+      "allowed_values_or_range": "numeric range [0, 1314]"
+     },
+     {
+      "name": "actor_code",
+      "type": "string",
+      "n_nonmissing": 892,
+      "allowed_values_or_range": "AU; Argentina; Australia; BRICS; Bangladesh; Brazil; CEPI; COVAX; Canada; Chile; China; CivilSocietyGeneric; Cuba; Diaspora; EU; Egypt; EpistemicCommunity; Ethiopia; FAO; FPGH; France; G20; G7; GatesFoundation; Gavi"
+     },
+     {
+      "name": "actor_label",
+      "type": "string",
+      "n_nonmissing": 892,
+      "allowed_values_or_range": "African Union / Africa CDC; Argentina; Australia; BRICS; Bangladesh; Bill & Melinda Gates Foundation; Brazil; CEPI; COVAX / ACT-Accelerator; Canada; Chile; China; Civil society (generic); Cuba; Diaspora / transnational communities; Egypt; Epistemic community / experts (generic); Ethiopia; European U \u2026"
+     },
+     {
+      "name": "power_mechanism_code",
+      "type": "string",
+      "n_nonmissing": 892,
+      "allowed_values_or_range": "access_to_decision_makers; agenda_setting_capacity; brokerage_power; coalition_size; control_of_implementation_resources; convening_power; credibility; development_assistance; diplomatic_reputation; epistemic_authority; financial_power; geopolitical_leverage; information_data_control; institutional_ \u2026"
+     },
+     {
+      "name": "power_mechanism_label",
+      "type": "string",
+      "n_nonmissing": 892,
+      "allowed_values_or_range": "Access to decision makers; Agenda-setting capacity; Brokerage / structural holes; Coalition size / numerical strength; Control of implementation resources; Convening power; Credibility; Development assistance as power; Diplomatic reputation / skill; Epistemic authority; Financial power; Geopolitical \u2026"
+     },
+     {
+      "name": "power_mechanism_family",
+      "type": "string",
+      "n_nonmissing": 892,
+      "allowed_values_or_range": "epistemic; institutional; legitimacy; material; relational"
+     },
+     {
+      "name": "mechanism_stated_verbatim",
+      "type": "boolean",
+      "n_nonmissing": 892,
+      "allowed_values_or_range": "False; True"
+     },
+     {
+      "name": "evidence_strength",
+      "type": "string",
+      "n_nonmissing": 892,
+      "allowed_values_or_range": "comparative_evidence; descriptive_evidence; documentary_process_evidence; interviews; process_tracing; quantitative_evidence; theoretical_assertion"
+     },
+     {
+      "name": "claim_type",
+      "type": "string",
+      "n_nonmissing": 892,
+      "allowed_values_or_range": "capacity_attribution; causal_effect; correlation_or_association; descriptive_statement; no_claim; normative_prescription"
+     },
+     {
+      "name": "is_provision_not_influence",
+      "type": "boolean",
+      "n_nonmissing": 892,
+      "allowed_values_or_range": "False; True"
+     },
+     {
+      "name": "outcome_claimed",
+      "type": "string",
+      "n_nonmissing": 855,
+      "allowed_values_or_range": "AU navigates politics, develops strategies, addresses linkag; BRICS political and economic influence globally increasing; Bank's influence in developing markets; anti-tobacco policie; Bank's support for anti-tobacco lending and WHO programmes; Barbados adopted sugar taxation policy for NCDs; Beijing \u2026"
+     },
+     {
+      "name": "hedged",
+      "type": "boolean",
+      "n_nonmissing": 892,
+      "allowed_values_or_range": "False; True"
+     },
+     {
+      "name": "source_sentence",
+      "type": "string",
+      "n_nonmissing": 892,
+      "allowed_values_or_range": "(2010) suggested that although the World Health Organization; (2016) argued that there is an inverse relationship between ; (3) The lack of accountability of donors and their influence; 1 The harrowing images that ensued and which were broadcast ; 102 Walking the talk The rise in divisive politics w \u2026"
+     },
+     {
+      "name": "source_sentence_wordcount",
+      "type": "integer",
+      "n_nonmissing": 892,
+      "description": "Word count of the withheld passage."
+     },
+     {
+      "name": "source_sentence_sha256_16",
+      "type": "string",
+      "n_nonmissing": 892,
+      "description": "First 16 hex characters of the SHA-256 of the withheld passage after whitespace collapse, strip and casefold. Recompute from your own copy of the source to confirm you located the passage we coded."
+     }
+    ],
+    "primaryKey": [
+     "document_id",
+     "sent_id",
+     "actor_code",
+     "power_mechanism_code"
+    ]
+   },
+   "description": "Sentence-level power-mechanism claims, with evidence strength, whether the mechanism is stated verbatim, and whether the claim is provision rather than influence.",
+   "x-foreign-keys-prose": "document_id -> documents.csv; actor_code -> actor_namespace_crosswalk.csv"
+  }
+ ]
+}

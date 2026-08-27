@@ -1,0 +1,22 @@
+{
+ "title": "A relational database of actors, claims, concepts and diplomatic actions in the global health diplomacy literature (1945-2026)",
+ "upload_type": "dataset",
+ "description": "<p>A relational database of the global health diplomacy (GHD) literature, built as the data layer of a systematic review. 13 linked tables, 42,063 rows and 404 documented variables.</p><p>The database is organised around a claim-level table in which each row is one attribution made about one actor in one document, coded separately for role, action, health issue, diplomatic arena, partner, power source and objective. Companion tables cover the bibliographic register for three corpora, retrieval and coding-tier assignment, extracted concept definitions with their unit of analysis, detected diplomatic actions and frames, sentence-level power-mechanism and causal claims, middle-power attributions, and finance-to-influence claims.</p><p><strong>Negative findings are part of the deposit.</strong> The middle-power tables record countries checked and never labelled; the diplomatic-actions table records whether each coded action is called diplomacy by its own source or is diplomacy only by analytical inference.</p><p><strong>Verbatim source passages are withheld.</strong> Individually each passage was capped below 25 words, but aggregated per source document the quotation would have amounted to substantial republication of third-party text, including non-open-licence material. All 6 verbatim columns (166,249 words) are replaced by the passage position, its word count and a SHA-256 digest, so a reader with legitimate access to a source can locate the passage and confirm cryptographically that it is the one coded here. REDACTION_LOG.csv records exactly what was removed from where.</p><p>Limits that bind any reuse are stated in README.md: coding-tier skew, the coding method recorded per row, an unresolved one-document discrepancy in the full-text denominator, licence-gated databases that were never searched, and the fact that no full text was obtained for any non-English work.</p>",
+ "access_right": "open",
+ "license": "cc-by-4.0",
+ "keywords": [
+  "global health diplomacy",
+  "health diplomacy",
+  "systematic review",
+  "relational database",
+  "content analysis",
+  "global health governance",
+  "middle powers",
+  "actor-network analysis",
+  "science of science",
+  "research data",
+  "PRISMA"
+ ],
+ "language": "eng",
+ "notes": "Verbatim source passages are withheld and represented by locator, word count and SHA-256 digest. The unredacted coding file can be shared with researchers for verification of the coding; see README.md."
+}
